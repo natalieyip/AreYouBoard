@@ -10,16 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170419224307) do
-=======
-ActiveRecord::Schema.define(version: 20170419222235) do
->>>>>>> f8411c9ea09c4b74783899b4b0cc4545b62263ac
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
+  create_table "games", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.string   "players",     null: false
+    t.string   "age",         null: false
+    t.string   "play_time",   null: false
+    t.integer  "complexity",  null: false
+    t.string   "publisher",   null: false
+    t.string   "img_url",     null: false
+    t.text     "description", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -35,19 +43,6 @@ ActiveRecord::Schema.define(version: 20170419222235) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-=======
-  create_table "games", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.string   "players",     null: false
-    t.string   "age",         null: false
-    t.string   "play_time",   null: false
-    t.integer  "complexity",  null: false
-    t.string   "publisher",   null: false
-    t.string   "img_url",     null: false
-    t.text     "description", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
->>>>>>> f8411c9ea09c4b74783899b4b0cc4545b62263ac
   end
 
 end
