@@ -5,6 +5,7 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     @games = Game.all
+    render 'index.html.haml'
   end
 
   # GET /games/1
