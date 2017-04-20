@@ -3,7 +3,7 @@
 This README documents whatever normal steps are necessary to get the
 application up and running.
 
-Things will be covering:
+Things we will be covering:
 
 * About this application:
 	This application is a board game social web app. Users can register, log-in and log-out. Users can add games to the database and their personal collections. Users can friend other users and recommend games to their friends. Users can review and comment on games and vote on reviews and games. Users can add tags to games for ease of search.
