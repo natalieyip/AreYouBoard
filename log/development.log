@@ -1956,3 +1956,30 @@ Processing by GamesController#index as HTML
 Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.6ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4742435677382185965);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20170420221445)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (52.1ms)[0m  [1m[35mCREATE TABLE "votes" ("id" serial primary key, "voteable_type" character varying, "voteable_id" integer, "user_id" integer, "value" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_voteable_type_and_voteable_id" ON "votes"  ("voteable_type", "voteable_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_user_id" ON "votes"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420221445"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFriendships (20170420222810)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" serial primary key, "user_id_id" integer, "friend_id_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE  INDEX  "index_friendships_on_user_id_id" ON "friendships"  ("user_id_id")[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE  INDEX  "index_friendships_on_friend_id_id" ON "friendships"  ("friend_id_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420222810"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFriendsrequests (20170420223333)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.0ms)[0m  [1m[35mCREATE TABLE "friendsrequests" ("id" serial primary key, "sender_id" integer, "friend_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b0c086bc56"
+FOREIGN KEY ("sender_id")
+  REFERENCES "senders" ("id")
+, CONSTRAINT "fk_rails_1f66f2c940"
+FOREIGN KEY ("friend_id")
+  REFERENCES "friends" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4742435677382185965)[0m

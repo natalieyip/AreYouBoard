@@ -1,9 +1,14 @@
 class VotesController < ApplicationController
 
-	def new
-		@game = Game.find(params[:game_id])
-	end 
+	def upvote
+		@vote = Vote.find_by(type: "game", vote_id: params[:game_id], user_id: current_user.id)
+		if @vote  
+			@vote.value += 1
+		else 
+			@vote = Vote.new(type: "game", vote_id: params[:game_id], user_id: current_user.id, value: 1 )
+		end 
+	end
 
-	def create
+	def downvote
 	end 
 end
