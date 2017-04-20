@@ -193,3 +193,11 @@ Processing by GamesController#new as HTML
 Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/games/new" for ::1 at 2017-04-20 10:17:25 -0700
+Processing by GamesController#new as HTML
+  Rendering games/new.html.haml within layouts/application
+  Rendered games/_form.html.haml (12.0ms)
+  Rendered games/new.html.haml within layouts/application (15.2ms)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
