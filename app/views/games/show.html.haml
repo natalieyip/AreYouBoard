@@ -8,6 +8,10 @@
       %p= "Play Time: #{@game.play_time}"
       %p= "Complexity: #{@game.complexity}"
       %p= "Publisher: #{@game.publisher}"
+    .tags
+      %h3 Tags
+      - @tags.each do |tag|
+        %p= tag.tag.name
     .game-description
       %p= "Description: #{@game.description}"
   .game-functionality

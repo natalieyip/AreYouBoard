@@ -11,6 +11,7 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @tags = GameTag.where(game: @game)
   end
 
   # GET /games/new
@@ -26,15 +27,16 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     tag_params = game_params[:tags]
-    tags = tag_params.match(/([a-zA-Z])/)
+    tags = tag_params.split(',')
     new_game_params = game_params.except(:tags)
     @game = Game.new(new_game_params)
 
     respond_to do |format|
       if @game.save
         tags.each do |tag|
-          Tag.create(tag: tag)
-          GameTag.create(game: @game, tag: tag)
+          Tag.create(name: tag)
+          found_tag = Tag.find_by(name: tag)
+          GameTag.create(game: @game, tag: found_tag)
         end
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
