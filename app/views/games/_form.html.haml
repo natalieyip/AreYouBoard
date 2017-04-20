@@ -21,5 +21,12 @@
       %option{value: "8+", selected: params[:players] == "8+"}= "8+"
     = f.label 'Age'
     %select
+      %option{value: "2+", selected: params[:age] == "2+"}= "2+"
+      %option{value: "4+", selected: params[:age] == "4+"}= "4+"
+      %option{value: "6+", selected: params[:age] == "6+"}= "6+"
+      %option{value: "10+", selected: params[:age] == "10+"}= "10+"
+      %option{value: "14+", selected: params[:age] == "14+"}= "14+"
+      %option{value: "18+", selected: params[:age] == "18+"}= "18+"
+
   .actions
     = f.submit
