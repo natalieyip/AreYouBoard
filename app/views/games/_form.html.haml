@@ -7,5 +7,19 @@
       %ul
         - game.errors.full_messages.each do |message|
           %li= message
+  .options
+    = f.label 'Title'
+    = f.text_field :title
+    = f.label 'Players'
+    %select
+      %option{value: "1", selected: params[:players] == "1"}= "1"
+      %option{value: "2", selected: params[:players] == "2"}= "2"
+      %option{value: "1-2", selected: params[:players] == "1-2"}= "1-2"
+      %option{value: "2-4", selected: params[:players] == "2-4"}= "2-4"
+      %option{value: "4-6", selected: params[:players] == "4-6"}= "4-6"
+      %option{value: "6-8", selected: params[:players] == "6-8"}= "6-8"
+      %option{value: "8+", selected: params[:players] == "8+"}= "8+"
+    = f.label 'Age'
+    %select
   .actions
     = f.submit
