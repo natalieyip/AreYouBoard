@@ -27,7 +27,9 @@ class GamesController < ApplicationController
   def create
     p params
     p '*' * 100
-    @game = Game.new(game_params)
+    tag_params = game_params[:tags]
+    new_game_params = game_params.except(:tags)
+    @game = Game.new(new_game_params)
 
     respond_to do |format|
       if @game.save
@@ -71,6 +73,7 @@ class GamesController < ApplicationController
     end
 
     def game_params
-      params.fetch(:game).permit(:title, :players, :age, :play_time, :complexity, :publisher, :img_url, :description)
+      params.fetch(:game).permit(:title, :players, :age, :play_time, :complexity, :publisher, :img_url, :description, :tags)
     end
+
 end
