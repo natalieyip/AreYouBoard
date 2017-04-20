@@ -11,3 +11,5 @@
 				= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Game', new_game_path
+
+= link_to('Logout', destroy_user_session_path, :method => :delete)
