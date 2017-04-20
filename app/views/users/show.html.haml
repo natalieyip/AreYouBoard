@@ -1,5 +1,13 @@
-%h1 
-	Hi #{@user.first_name}!
-
-
-= link_to('Logout', destroy_user_session_path, :method => :delete)
+%h1 Hi #{@user.first_name}!
+%h2 Your Games Collection:
+.game-container
+	-@games.each do |game|
+		.game-container
+			.game-info
+				%h3= game.title
+				.game-functionality
+				= link_to 'Show', game
+				= link_to 'Edit', edit_game_path(game)
+				= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Game', new_game_path

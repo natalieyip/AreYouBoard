@@ -1,4 +1,4 @@
-class Friend < ApplicationRecord
+class Friendship < ApplicationRecord
 	belongs_to :user, foreign_key: :friend_id
 
 	 # after creation, create a reciprocal friendship
