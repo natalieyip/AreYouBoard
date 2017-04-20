@@ -1,12 +1,9 @@
 %p#notice= notice
 %h1 Games
-%table
-  %thead
-    %tr
-      %th.colspan
-  %tbody
-    - @games.each do |game|
-      %div.game-info
+.games-container
+  - @games.each do |game|
+    .game-container
+      .game-info
         %h3= game.title
         %p= "Players: #{game.title}"
         %p= "Age: #{game.age}"
@@ -14,9 +11,9 @@
         %p= "Complexity: #{game.complexity}"
         %p= "Publisher: #{game.publisher}"
         %p= "Description: #{game.description}"
-      %tr
-        %td= link_to 'Show', game
-        %td= link_to 'Edit', edit_game_path(game)
-        %td= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }
+      .game-functionality
+        = link_to 'Show', game
+        = link_to 'Edit', edit_game_path(game)
+        = link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Game', new_game_path

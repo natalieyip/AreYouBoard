@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+
+.games-container {
+  border: 1px solid blue;
+  margin: auto;
+  width: 50%;
+}
+
+.game-container {
+  padding: 10px;
+}
+
