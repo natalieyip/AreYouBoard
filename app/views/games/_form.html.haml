@@ -27,6 +27,16 @@
       %option{value: "10+", selected: params[:age] == "10+"}= "10+"
       %option{value: "14+", selected: params[:age] == "14+"}= "14+"
       %option{value: "18+", selected: params[:age] == "18+"}= "18+"
+    = f.label 'Play Time'
+    %select
+      %option{value: "10", selected: params[:play_time] == "10"}= "10 min"
+      %option{value: "20", selected: params[:play_time] == "20"}= "20 min"
+      %option{value: "20-30", selected: params[:play_time] == "20-30"}= "20-30 min"
+      %option{value: "30-45", selected: params[:play_time] == "30-45"}= "30-45 min"
+      %option{value: "45-60", selected: params[:play_time] == "45-60"}= "45-60 min"
+      %option{value: "60-90", selected: params[:play_time] == "60-90"}= "60-90 min"
+      %option{value: "90-120", selected: params[:play_time] == "90-120"}= "90-120 min"
+      %option{value: "120+", selected: params[:play_time] == "120+"}= "120+ min"
 
   .actions
     = f.submit

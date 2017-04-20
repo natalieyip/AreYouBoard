@@ -169,3 +169,27 @@ Processing by GamesController#new as HTML
 Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/games/new" for ::1 at 2017-04-20 10:14:27 -0700
+Processing by GamesController#new as HTML
+  Rendering games/new.html.haml within layouts/application
+  Rendered games/_form.html.haml (8.3ms)
+  Rendered games/new.html.haml within layouts/application (11.7ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/new" for ::1 at 2017-04-20 10:14:43 -0700
+Processing by GamesController#new as HTML
+  Rendering games/new.html.haml within layouts/application
+  Rendered games/_form.html.haml (8.8ms)
+  Rendered games/new.html.haml within layouts/application (11.5ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/new" for ::1 at 2017-04-20 10:15:35 -0700
+Processing by GamesController#new as HTML
+  Rendering games/new.html.haml within layouts/application
+  Rendered games/_form.html.haml (9.4ms)
+  Rendered games/new.html.haml within layouts/application (12.2ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
