@@ -25,6 +25,8 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
+    p params
+    p '*' * 100
     @game = Game.new(game_params)
 
     respond_to do |format|

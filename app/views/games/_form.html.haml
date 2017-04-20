@@ -7,5 +7,52 @@
       %ul
         - game.errors.full_messages.each do |message|
           %li= message
+  .options
+    = f.label 'Title'
+    = f.text_field :title
+    = f.label 'Publisher'
+    = f.text_field :publisher
+    = f.label 'Players'
+    %select{ name: 'game[players]' }
+      %option{:value=> '1', selected: params[:players] == "1"}="1"
+      %option{:value=> '2', selected: params[:players] == "2"}="2"
+      %option{:value=> '2-4', selected: params[:players] == "2-4"}="2-4"
+      %option{:value=> '4-6', selected: params[:players] == "4-6"}="4-6"
+      %option{:value=> '6-8', selected: params[:players] == "6-8"}="6-8"
+      %option{:value=> '8+', selected: params[:players] == "8+"}="8+"
+    = f.label 'Age'
+    %select{ name: 'game[age]'}
+      %option{value: "2+", selected: params[:age] == "2+"}= "2+"
+      %option{value: "4+", selected: params[:age] == "4+"}= "4+"
+      %option{value: "6+", selected: params[:age] == "6+"}= "6+"
+      %option{value: "10+", selected: params[:age] == "10+"}= "10+"
+      %option{value: "14+", selected: params[:age] == "14+"}= "14+"
+      %option{value: "18+", selected: params[:age] == "18+"}= "18+"
+    = f.label 'Play Time'
+    %select{ name: 'game[play_time]'}
+      %option{value: "10", selected: params[:play_time] == "10"}= "10 min"
+      %option{value: "20", selected: params[:play_time] == "20"}= "20 min"
+      %option{value: "20-30", selected: params[:play_time] == "20-30"}= "20-30 min"
+      %option{value: "30-45", selected: params[:play_time] == "30-45"}= "30-45 min"
+      %option{value: "45-60", selected: params[:play_time] == "45-60"}= "45-60 min"
+      %option{value: "60-90", selected: params[:play_time] == "60-90"}= "60-90 min"
+      %option{value: "90-120", selected: params[:play_time] == "90-120"}= "90-120 min"
+      %option{value: "120+", selected: params[:play_time] == "120+"}= "120+ min"
+    = f.label 'Complexity'
+    %select{ name: 'game[complexity]'}
+      %option{value: "1", selected: params[:complexity] == "1"}= "1"
+      %option{value: "2", selected: params[:complexity] == "2"}= "2"
+      %option{value: "3", selected: params[:complexity] == "3"}= "3"
+      %option{value: "4", selected: params[:complexity] == "4"}= "4"
+      %option{value: "5", selected: params[:complexity] == "5"}= "5"
+      %option{value: "6", selected: params[:complexity] == "6"}= "6"
+      %option{value: "7", selected: params[:complexity] == "7"}= "7"
+      %option{value: "8", selected: params[:complexity] == "8"}= "8"
+      %option{value: "9", selected: params[:complexity] == "9"}= "9"
+      %option{value: "10", selected: params[:complexity] == "10"}= "10"
+    = f.label 'Game Photo'
+    = f.file_field :img_url
+    = f.label 'Description'
+    = f.text_area :description
   .actions
     = f.submit

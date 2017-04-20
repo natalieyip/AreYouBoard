@@ -7,7 +7,7 @@ class CreateGames < ActiveRecord::Migration[5.0]
       t.string :play_time, null: false
       t.integer :complexity, null: false
       t.string :publisher, null: false
-      t.string :img_url, null: false
+      t.string :img_url
       t.text :description, null: false
 
       t.timestamps null: false
