@@ -50,5 +50,9 @@
       %option{value: "8", selected: params[:complexity] == "8"}= "8"
       %option{value: "9", selected: params[:complexity] == "9"}= "9"
       %option{value: "10", selected: params[:complexity] == "10"}= "10"
+    = f.label 'Game Photo'
+    = f.file_field :img_url
+    = f.label 'Description'
+    = f.text_area :description
   .actions
     = f.submit

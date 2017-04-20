@@ -1141,3 +1141,403 @@ Processing by GamesController#create as HTML
 Completed 200 OK in 66ms (Views: 61.8ms | ActiveRecord: 0.3ms)
 
 
+Started POST "/games" for ::1 at 2017-04-20 11:05:56 -0700
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CzeuClhdAtBw0PFRJs+m/U0baNiW/0mHRpwNQulmCF8bTAsDeukwi56jP64Ciym5lRq4aqDRR5yMc9IhoKqGpg==", "game"=>{"title"=>"asdasasdasdas", "publisher"=>"asdasasdasdas", "players"=>"6-8", "age"=>"14+", "play_time"=>"60-90", "complexity"=>"7"}, "commit"=>"Create Game"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering games/new.html.haml within layouts/application
+  Rendered games/_form.html.haml (127.0ms)
+  Rendered games/new.html.haml within layouts/application (132.1ms)
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `file_field_tag' for #<ActionView::Helpers::FormBuilder:0x007f933a0706a0>
+Did you mean?  file_field):
+    51:       %option{value: "9", selected: params[:complexity] == "9"}= "9"
+    52:       %option{value: "10", selected: params[:complexity] == "10"}= "10"
+    53:     = f.label 'Game Photo'
+    54:     = f.file_field_tag
+    55:   .actions
+    56:     = f.submit
+  
+app/views/games/_form.html.haml:54:in `block in _app_views_games__form_html_haml___1658255148463696095_70135155481820'
+app/views/games/_form.html.haml:1:in `_app_views_games__form_html_haml___1658255148463696095_70135155481820'
+app/views/games/new.html.haml:2:in `_app_views_games_new_html_haml___508165591863613317_70135087593460'
+app/controllers/games_controller.rb:37:in `block (2 levels) in create'
+app/controllers/games_controller.rb:32:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.3ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (104.1ms)
+Started POST "/games" for ::1 at 2017-04-20 11:06:06 -0700
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CzeuClhdAtBw0PFRJs+m/U0baNiW/0mHRpwNQulmCF8bTAsDeukwi56jP64Ciym5lRq4aqDRR5yMc9IhoKqGpg==", "game"=>{"title"=>"asdasasdasdas", "publisher"=>"asdasasdasdas", "players"=>"6-8", "age"=>"14+", "play_time"=>"60-90", "complexity"=>"7"}, "commit"=>"Create Game"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering games/new.html.haml within layouts/application
+  Rendered games/_form.html.haml (21.4ms)
+  Rendered games/new.html.haml within layouts/application (25.7ms)
+Completed 200 OK in 60ms (Views: 55.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/games" for ::1 at 2017-04-20 11:06:33 -0700
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CzeuClhdAtBw0PFRJs+m/U0baNiW/0mHRpwNQulmCF8bTAsDeukwi56jP64Ciym5lRq4aqDRR5yMc9IhoKqGpg==", "game"=>{"title"=>"asdasasdasdas", "publisher"=>"asdasasdasdas", "players"=>"6-8", "age"=>"14+", "play_time"=>"60-90", "complexity"=>"7"}, "commit"=>"Create Game"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering games/new.html.haml within layouts/application
+  Rendered games/_form.html.haml (14.1ms)
+  Rendered games/new.html.haml within layouts/application (17.6ms)
+Completed 200 OK in 71ms (Views: 48.3ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/games" for ::1 at 2017-04-20 11:16:08 -0700
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CzeuClhdAtBw0PFRJs+m/U0baNiW/0mHRpwNQulmCF8bTAsDeukwi56jP64Ciym5lRq4aqDRR5yMc9IhoKqGpg==", "game"=>{"title"=>"asdasasdasdas", "publisher"=>"asdasasdasdas", "players"=>"6-8", "age"=>"14+", "play_time"=>"60-90", "complexity"=>"7"}, "commit"=>"Create Game"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering games/new.html.haml within layouts/application
+  Rendered games/_form.html.haml (38.5ms)
+  Rendered games/new.html.haml within layouts/application (48.9ms)
+Completed 200 OK in 126ms (Views: 103.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for ::1 at 2017-04-20 11:16:11 -0700
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+mGAHmPHBQ4+Kj2f6l4+zL54RTSS39zS+BWuWZ++LIPqGiUXQXM3VdBZ82DOGrGIZnmVhqTx0sky+nE61nKieg==", "game"=>{"title"=>"asdasasdasdas", "publisher"=>"asdasasdasdas", "players"=>"1", "age"=>"2+", "play_time"=>"10", "complexity"=>"1", "description"=>"asdasdasgsdgdf"}, "commit"=>"Create Game"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (15.1ms)[0m  [1m[32mINSERT INTO "games" ("title", "players", "age", "play_time", "complexity", "publisher", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "asdasasdasdas"], ["players", "1"], ["age", "2+"], ["play_time", "10"], ["complexity", 1], ["publisher", "asdasasdasdas"], ["description", "asdasdasgsdgdf"], ["created_at", 2017-04-20 18:16:11 UTC], ["updated_at", 2017-04-20 18:16:11 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 15.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ERROR:  null value in column "img_url" violates not-null constraint
+DETAIL:  Failing row contains (1, asdasasdasdas, 1, 2+, 10, 1, asdasasdasdas, null, asdasdasgsdgdf, 2017-04-20 18:16:11.516688, 2017-04-20 18:16:11.516688).
+: INSERT INTO "games" ("title", "players", "age", "play_time", "complexity", "publisher", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"):
+  
+app/controllers/games_controller.rb:33:in `block in create'
+app/controllers/games_controller.rb:32:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.9ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (98.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4742435677382185965);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4742435677382185965)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (7862.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "client_game_project_development"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4742435677382185965);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4742435677382185965)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/games" for ::1 at 2017-04-20 11:18:48 -0700
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CzeuClhdAtBw0PFRJs+m/U0baNiW/0mHRpwNQulmCF8bTAsDeukwi56jP64Ciym5lRq4aqDRR5yMc9IhoKqGpg==", "game"=>{"title"=>"asdasasdasdas", "publisher"=>"asdasasdasdas", "players"=>"6-8", "age"=>"14+", "play_time"=>"60-90", "complexity"=>"7"}, "commit"=>"Create Game"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering games/new.html.haml within layouts/application
+  Rendered games/_form.html.haml (13.3ms)
+  Rendered games/new.html.haml within layouts/application (16.5ms)
+Completed 200 OK in 62ms (Views: 43.1ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/games" for ::1 at 2017-04-20 11:18:57 -0700
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6rGcDOCA/t9dn1yJHbIvWb1/EC2NCok8BIQlwQBTiKn6yjkFwjTMhLPsknY59qAdZX7An7skhyfOa/qiSZ8GUA==", "game"=>{"title"=>"asdasasdasdasdfdss", "publisher"=>"asdasasdasdassdfs", "players"=>"8+", "age"=>"6+", "play_time"=>"30-45", "complexity"=>"7", "description"=>"sdfdsdsfsd"}, "commit"=>"Create Game"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "games" ("title", "players", "age", "play_time", "complexity", "publisher", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "asdasasdasdasdfdss"], ["players", "8+"], ["age", "6+"], ["play_time", "30-45"], ["complexity", 7], ["publisher", "asdasasdasdassdfs"], ["description", "sdfdsdsfsd"], ["created_at", 2017-04-20 18:18:57 UTC], ["updated_at", 2017-04-20 18:18:57 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ERROR:  null value in column "img_url" violates not-null constraint
+DETAIL:  Failing row contains (2, asdasasdasdasdfdss, 8+, 6+, 30-45, 7, asdasasdasdassdfs, null, sdfdsdsfsd, 2017-04-20 18:18:57.318288, 2017-04-20 18:18:57.318288).
+: INSERT INTO "games" ("title", "players", "age", "play_time", "complexity", "publisher", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"):
+  
+app/controllers/games_controller.rb:33:in `block in create'
+app/controllers/games_controller.rb:32:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (102.2ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4742435677382185965);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4742435677382185965)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4742435677382185965);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170419224307)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (23.8ms)[0m  [1m[35mDROP INDEX  "index_users_on_reset_password_token"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP INDEX  "index_users_on_email"[0m
+  [1m[35m (7.9ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170419224307"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4742435677382185965)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4742435677382185965);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170419224307)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (46.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170419224307"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4742435677382185965)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (5187.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "client_game_project_development"[0m
+  [1m[35m (209.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "client_game_project_test"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "client_game_project_development"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "client_game_project_test"[0m
+  [1m[35m (25.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (22.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4742435677382185965);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGames (20170419222235)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.6ms)[0m  [1m[35mCREATE TABLE "games" ("id" serial primary key, "title" character varying NOT NULL, "players" character varying NOT NULL, "age" character varying NOT NULL, "play_time" character varying NOT NULL, "complexity" integer NOT NULL, "publisher" character varying NOT NULL, "img_url" character varying, "description" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170419222235"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20170419224307)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (40.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170419224307"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-20 18:20:47 UTC], ["updated_at", 2017-04-20 18:20:47 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4742435677382185965)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/games" for ::1 at 2017-04-20 11:21:22 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (2.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/_index.html.haml (20.8ms)
+  Rendered index.html.haml within layouts/application (25.4ms)
+Completed 200 OK in 231ms (Views: 225.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/games/new" for ::1 at 2017-04-20 11:21:24 -0700
+Processing by GamesController#new as HTML
+  Rendering games/new.html.haml within layouts/application
+  Rendered games/_form.html.haml (52.7ms)
+  Rendered games/new.html.haml within layouts/application (57.4ms)
+Completed 200 OK in 106ms (Views: 87.6ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/games" for ::1 at 2017-04-20 11:21:34 -0700
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A7Aq+FyDOhPSihcMY92CkfQUWawyUOgAB5XnLNx5VUcTy4/xfjcISDz52fNHmQ3VLBWJHgR+5hvNejhPlbXbvg==", "game"=>{"title"=>"sdfds", "publisher"=>"sdfsd", "players"=>"2-4", "age"=>"14+", "play_time"=>"45-60", "complexity"=>"8", "description"=>"sfsdfsdfsd"}, "commit"=>"Create Game"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "games" ("title", "players", "age", "play_time", "complexity", "publisher", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "sdfds"], ["players", "2-4"], ["age", "14+"], ["play_time", "45-60"], ["complexity", 8], ["publisher", "sdfsd"], ["description", "sfsdfsdfsd"], ["created_at", 2017-04-20 18:21:34 UTC], ["updated_at", 2017-04-20 18:21:34 UTC]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 12ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-20 11:21:34 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  Rendered games/show.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 57ms (Views: 49.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/games" for ::1 at 2017-04-20 11:21:37 -0700
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/_index.html.haml (4.4ms)
+  Rendered index.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 33ms (Views: 32.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for ::1 at 2017-04-20 11:30:39 -0700
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  Rendered games/_index.html.haml (4.1ms)
+  Rendered index.html.haml within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:9: syntax error, unexpected tSTRING_DEND, expecting ')'
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:11: unknown regexp option - p
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:11: syntax error, unexpected $undefined
+));}</p>\n    <p>#{_hamlout.adjust_tab...
+         ^
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:12: syntax error, unexpected ')'
+));}</p>\n    <p>#{_hamlout.ad...
+ ^
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:13: unknown regexp option - p
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:13: syntax error, unexpected $undefined
+));}</p>\n    <p>#{_hamlout.adjust_tab...
+         ^
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:14: syntax error, unexpected ')'
+));}</p>\n    <p>#{_hamlout.ad...
+ ^
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:15: unknown regexp option - p
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:15: syntax error, unexpected $undefined
+));}</p>\n    <p>#{_hamlout.adjust_tab...
+         ^
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:16: syntax error, unexpected ')'
+));}</p>\n    <tr>\n      <td>#{_hamlout.adjust_tabs(2); 
+ ^
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:18: unknown regexp options - td
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:18: syntax error, unexpected $undefined
+));}</td>\n      <td>#{_hamlout.adjust_...
+          ^
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:19: syntax error, unexpected ')'
+));}</td>\n      <td>#{_hamlou...
+ ^
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:20: unknown regexp options - td
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:20: syntax error, unexpected $undefined
+));}</td>\n    </tr>\n", -1, false);end...
+          ^
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:20: unknown regexp options - tbdy
+unmatched close parenthesis: /tr>\n", -1, false);end;_hamlout.push_text("  </
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:20: syntax error, unexpected $undefined
+..._hamlout.push_text("  </tbody>\n</table>\n<br>\n#{_hamlout.a...
+...                               ^
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:20: unterminated regexp meets end of file
+/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:20: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/games/_index.html.haml:9: syntax error, unexpected tSTRING_DEND, expecting ')'
+app/views/games/_index.html.haml:11: unknown regexp option - p
+app/views/games/_index.html.haml:11: syntax error, unexpected $undefined
+app/views/games/_index.html.haml:12: syntax error, unexpected ')'
+app/views/games/_index.html.haml:13: unknown regexp option - p
+app/views/games/_index.html.haml:13: syntax error, unexpected $undefined
+app/views/games/_index.html.haml:14: syntax error, unexpected ')'
+app/views/games/_index.html.haml:15: unknown regexp option - p
+app/views/games/_index.html.haml:15: syntax error, unexpected $undefined
+app/views/games/_index.html.haml:16: syntax error, unexpected ')'
+app/views/games/_index.html.haml:18: unknown regexp options - td
+app/views/games/_index.html.haml:18: syntax error, unexpected $undefined
+app/views/games/_index.html.haml:19: syntax error, unexpected ')'
+app/views/games/_index.html.haml:20: unknown regexp options - td
+app/views/games/_index.html.haml:20: syntax error, unexpected $undefined
+app/views/games/_index.html.haml:20: unknown regexp options - tbdy
+app/views/games/_index.html.haml:20: syntax error, unexpected $undefined
+app/views/games/_index.html.haml:20: unterminated regexp meets end of file
+app/views/games/_index.html.haml:20: syntax error, unexpected end-of-input, expecting ')'
+app/views/index.html.haml:1:in `_app_views_index_html_haml__3450280295757616334_70093223823220'
+app/controllers/games_controller.rb:8:in `index'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (103.4ms)
+Started GET "/games" for ::1 at 2017-04-20 11:30:59 -0700
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/_index.html.haml (6.7ms)
+  Rendered index.html.haml within layouts/application (9.8ms)
+Completed 200 OK in 50ms (Views: 48.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/games" for ::1 at 2017-04-20 11:32:03 -0700
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/_index.html.haml (6.2ms)
+  Rendered index.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games/new" for ::1 at 2017-04-20 11:32:07 -0700
+Processing by GamesController#new as HTML
+  Rendering games/new.html.haml within layouts/application
+  Rendered games/_form.html.haml (19.4ms)
+  Rendered games/new.html.haml within layouts/application (23.6ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games" for ::1 at 2017-04-20 11:32:31 -0700
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qD39yAdOagqG1Kj8xJMChXr8s5X1OD4bu15X85x67CK4RljBJfpYUWinZgPg143Bov1jJ8MWMABxsYiQ1bZi2w==", "game"=>{"title"=>"Second Game", "publisher"=>"Hasbro", "players"=>"2-4", "age"=>"18+", "play_time"=>"90-120", "complexity"=>"7", "description"=>"This is a greate and super fun game you should play."}, "commit"=>"Create Game"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "games" ("title", "players", "age", "play_time", "complexity", "publisher", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Second Game"], ["players", "2-4"], ["age", "18+"], ["play_time", "90-120"], ["complexity", 7], ["publisher", "Hasbro"], ["description", "This is a greate and super fun game you should play."], ["created_at", 2017-04-20 18:32:31 UTC], ["updated_at", 2017-04-20 18:32:31 UTC]]
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 19ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/games/2" for ::1 at 2017-04-20 11:32:31 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  Rendered games/show.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/games" for ::1 at 2017-04-20 11:32:33 -0700
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/_index.html.haml (6.0ms)
+  Rendered index.html.haml within layouts/application (9.1ms)
+Completed 200 OK in 32ms (Views: 31.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for ::1 at 2017-04-20 11:32:35 -0700
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/_index.html.haml (5.6ms)
+  Rendered index.html.haml within layouts/application (9.5ms)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+

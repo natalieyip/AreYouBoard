@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170419224307) do
     t.string   "play_time",   null: false
     t.integer  "complexity",  null: false
     t.string   "publisher",   null: false
-    t.string   "img_url",     null: false
+    t.string   "img_url"
     t.text     "description", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

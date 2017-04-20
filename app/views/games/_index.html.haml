@@ -6,6 +6,14 @@
       %th.colspan
   %tbody
     - @games.each do |game|
+      %div.game-info
+        %h3= game.title
+        %p= "Players: #{game.title}"
+        %p= "Age: #{game.age}"
+        %p= "Play Time: #{game.play_time}"
+        %p= "Complexity: #{game.complexity}"
+        %p= "Publisher: #{game.publisher}"
+        %p= "Description: #{game.description}"
       %tr
         %td= link_to 'Show', game
         %td= link_to 'Edit', edit_game_path(game)
