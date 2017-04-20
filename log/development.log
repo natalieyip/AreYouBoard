@@ -492,7 +492,6 @@ actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
 actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-=======
   Rendering /Users/benjaminacevedo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
   Rendering /Users/benjaminacevedo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
   Rendered /Users/benjaminacevedo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
@@ -565,7 +564,6 @@ Started GET "/user" for ::1 at 2017-04-20 09:49:53 -0700
 ActionController::RoutingError (No route matches [GET] "/user"):
 
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
->>>>>>> 12fc2eee018b81cfa3c5b8a3e872b6bf6c656336
 web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
 web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
@@ -591,7 +589,6 @@ puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
 puma (3.8.2) lib/puma/server.rb:435:in `process_client'
 puma (3.8.2) lib/puma/server.rb:299:in `block in run'
 puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
-<<<<<<< HEAD
   Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
   Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.6ms)
 Started GET "/games/new" for ::1 at 2017-04-20 10:29:58 -0700
@@ -653,7 +650,6 @@ actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
 actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-=======
   Rendering /Users/benjaminacevedo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
   Rendering /Users/benjaminacevedo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
   Rendered /Users/benjaminacevedo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
@@ -796,7 +792,6 @@ actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
 actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-=======
   Rendering /Users/benjaminacevedo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
   Rendering /Users/benjaminacevedo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
   Rendered /Users/benjaminacevedo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
@@ -1152,7 +1147,7 @@ Processing by GamesController#create as HTML
 Completed 500 Internal Server Error in 150ms (ActiveRecord: 0.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `file_field_tag' for #<ActionView::Helpers::FormBuilder:0x007f933a0706a0>
 Did you mean?  file_field):
     51:       %option{value: "9", selected: params[:complexity] == "9"}= "9"
@@ -1161,7 +1156,7 @@ Did you mean?  file_field):
     54:     = f.file_field_tag
     55:   .actions
     56:     = f.submit
-  
+
 app/views/games/_form.html.haml:54:in `block in _app_views_games__form_html_haml___1658255148463696095_70135155481820'
 app/views/games/_form.html.haml:1:in `_app_views_games__form_html_haml___1658255148463696095_70135155481820'
 app/views/games/new.html.haml:2:in `_app_views_games_new_html_haml___508165591863613317_70135087593460'
@@ -1217,11 +1212,11 @@ Processing by GamesController#create as HTML
 Completed 500 Internal Server Error in 28ms (ActiveRecord: 15.4ms)
 
 
-  
+
 ActiveRecord::StatementInvalid (PG::NotNullViolation: ERROR:  null value in column "img_url" violates not-null constraint
 DETAIL:  Failing row contains (1, asdasasdasdas, 1, 2+, 10, 1, asdasasdasdas, null, asdasdasgsdgdf, 2017-04-20 18:16:11.516688, 2017-04-20 18:16:11.516688).
 : INSERT INTO "games" ("title", "players", "age", "play_time", "complexity", "publisher", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"):
-  
+
 app/controllers/games_controller.rb:33:in `block in create'
 app/controllers/games_controller.rb:32:in `create'
   Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
@@ -1273,11 +1268,11 @@ Processing by GamesController#create as HTML
 Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.3ms)
 
 
-  
+
 ActiveRecord::StatementInvalid (PG::NotNullViolation: ERROR:  null value in column "img_url" violates not-null constraint
 DETAIL:  Failing row contains (2, asdasasdasdasdfdss, 8+, 6+, 30-45, 7, asdasasdasdassdfs, null, sdfdsdsfsd, 2017-04-20 18:18:57.318288, 2017-04-20 18:18:57.318288).
 : INSERT INTO "games" ("title", "players", "age", "play_time", "complexity", "publisher", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"):
-  
+
 app/controllers/games_controller.rb:33:in `block in create'
 app/controllers/games_controller.rb:32:in `create'
   Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
@@ -1407,7 +1402,7 @@ Processing by GamesController#index as HTML
 Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:9: syntax error, unexpected tSTRING_DEND, expecting ')'
 /Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:11: unknown regexp option - p
 /Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:11: syntax error, unexpected $undefined
@@ -1428,7 +1423,7 @@ SyntaxError (/Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project
 ));}</p>\n    <p>#{_hamlout.adjust_tab...
          ^
 /Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:16: syntax error, unexpected ')'
-));}</p>\n    <tr>\n      <td>#{_hamlout.adjust_tabs(2); 
+));}</p>\n    <tr>\n      <td>#{_hamlout.adjust_tabs(2);
  ^
 /Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:18: unknown regexp options - td
 /Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:18: syntax error, unexpected $undefined
@@ -1448,7 +1443,7 @@ unmatched close parenthesis: /tr>\n", -1, false);end;_hamlout.push_text("  </
 ...                               ^
 /Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:20: unterminated regexp meets end of file
 /Users/Daniel/Google Drive/Dev Bootcamp/phase_3/client_game_project/app/views/games/_index.html.haml:20: syntax error, unexpected end-of-input, expecting ')'):
-  
+
 app/views/games/_index.html.haml:9: syntax error, unexpected tSTRING_DEND, expecting ')'
 app/views/games/_index.html.haml:11: unknown regexp option - p
 app/views/games/_index.html.haml:11: syntax error, unexpected $undefined
@@ -1685,7 +1680,7 @@ Processing by GamesController#show as HTML
 Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.6ms)
 
 
-  
+
 ActionView::Template::Error (Inconsistent indentation: 8 spaces used for indentation, but the rest of the document was indented using 6 spaces.):
     1: %p#notice= notice
     2: .game-container
@@ -1694,7 +1689,7 @@ ActionView::Template::Error (Inconsistent indentation: 8 spaces used for indenta
     5:         %p= "Players: #{@game.title}"
     6:         %p= "Age: #{@game.age}"
     7:         %p= "Play Time: #{@game.play_time}"
-  
+
 app/views/games/show.html.haml:4
   Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
   Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
