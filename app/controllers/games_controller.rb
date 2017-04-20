@@ -25,14 +25,17 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
-    p params
-    p '*' * 100
     tag_params = game_params[:tags]
+    tags = tag_params.match(/([a-zA-Z])/)
     new_game_params = game_params.except(:tags)
     @game = Game.new(new_game_params)
 
     respond_to do |format|
       if @game.save
+        tags.each do |tag|
+          Tag.create(tag: tag)
+          GameTag.create(game: @game, tag: tag)
+        end
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
       else
