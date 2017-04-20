@@ -6,4 +6,6 @@ class UsersController < ApplicationController
 	current_user
 
 	user_session 
+
+	
 end 
