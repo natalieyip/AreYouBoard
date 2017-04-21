@@ -30,8 +30,8 @@
     - @reviews.each do |review|
       .review-container
         .review-container-inner
-          / .vote-count= @review.votes.sum(:value)
           = render partial: "votes/neutral_review", locals: {review: review }
+          .vote-count= review.votes.sum(:value)
           %h3= review.title
           %p.posted-by= "Posted by #{User.find(review.user_id).full_name}"
           %p= review.body
