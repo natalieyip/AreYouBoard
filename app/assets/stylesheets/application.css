@@ -75,8 +75,10 @@
   border: 1px solid gray;
   margin: 3px;
   padding: 10px;
+  display: flex;
   background-color: #80e27e;
   border-radius: 5px;
+  justify-content: space-between;
 }
 
 
@@ -120,14 +122,6 @@
   width: 50%;
 }
 
-.review-container {
-  border: 1px solid gray;
-  display: block;
-  background-color: #80e27e;
-  border-radius: 5px;
-  padding: 5px;
-  margin-bottom: 10px;
-}
 
 .title {
   font-size: 20px;
@@ -150,12 +144,21 @@
 
 .review-container-inner {
   margin-left: 5px;
+  padding: 5px;
+  width: 90%;
+}
+
+.votes-review {
+  display: flex;
+  align-items: center;
+  width: 30%;
 }
 
 .votes {
   display: flex;
   align-items: center;
 }
+
 
 .vote-buttons {
   display: flex;
