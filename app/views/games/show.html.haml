@@ -8,10 +8,20 @@
       %p= "Play Time: #{@game.play_time}"
       %p= "Complexity: #{@game.complexity}"
       %p= "Publisher: #{@game.publisher}"
+    .game-tags
+      %h3 Tags
+      - @tags.each do |tag|
+        %p= tag.tag.name
     .game-description
       %p= "Description: #{@game.description}"
   .game-functionality
     = link_to 'Edit', edit_game_path(@game)
     = link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }
     = link_to 'Back', games_path
+.reviews-container
+  - if @reviews
+    @reviews.each do |review|
+      %h3= review.title
+      %p= review.text
+  = form_for
 

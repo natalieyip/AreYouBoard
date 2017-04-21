@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   root to: 'games#index'
   resources :games do
   	resources :votes
-  end 
+    resources :reviews
+  end
   resources :users
+  resources :tags
 
 end
