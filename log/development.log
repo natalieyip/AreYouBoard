@@ -2943,3 +2943,33 @@ Processing by GamesController#show as HTML
 Completed 200 OK in 66ms (Views: 44.6ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/games/11" for ::1 at 2017-04-20 16:34:42 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[36mGameTag Load (0.5ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 11[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered games/show.html.haml within layouts/application (11.1ms)
+Completed 200 OK in 54ms (Views: 49.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/games/11" for ::1 at 2017-04-20 16:34:57 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[36mGameTag Load (0.4ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 11[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered games/show.html.haml within layouts/application (10.7ms)
+Completed 200 OK in 44ms (Views: 39.1ms | ActiveRecord: 1.6ms)
+
+

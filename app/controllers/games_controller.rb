@@ -12,6 +12,7 @@ class GamesController < ApplicationController
   # GET /games/1.json
   def show
     @tags = GameTag.where(game: @game)
+    @reviews = Review.where(game: @game)
   end
 
   # GET /games/new
