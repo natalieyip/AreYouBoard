@@ -20,8 +20,7 @@
     = link_to 'Back', games_path
 .reviews-container
   - if @reviews
-    @reviews.each do |review|
+    - @reviews.each do |review|
       %h3= review.title
       %p= review.text
-  = form_for
-
+= render partial: "votes/neutral"
