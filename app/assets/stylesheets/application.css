@@ -60,6 +60,14 @@
   justify-content: space-between;
 }
 
+.review-container {
+  border: 1px solid gray;
+  margin: 3px;
+  padding: 10px;
+  background-color: #80e27e;
+  border-radius: 5px;
+}
+
 
 .game-functionality {
   border: 1px solid gray;

@@ -33,12 +33,13 @@
           %h3= review.title
           %p.posted-by= "Posted by #{User.find(review.user_id).full_name}"
           %p= review.body
-  %h3 Create a New Review
-  = form_for [@game, @new_review] do |f|
-    = f.label 'Title'
-    = f.text_field :title
-    = f.label 'Body'
-    = f.text_field :body
-    = f.submit
+  .review-container
+    %h3 Create a New Review
+    = form_for [@game, @new_review] do |f|
+      = f.label 'Title'
+      = f.text_field :title
+      = f.label 'Body'
+      = f.text_field :body
+      = f.submit
 
 
