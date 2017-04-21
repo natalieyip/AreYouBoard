@@ -1,12 +1,14 @@
--if @user.id != @current_user.id && @curren
+-if @user.id != @current_user.id && !@current_user.friends.pluck(:id).include?(@user.id)
   = link_to 'Add as friend', user_friends_path(@user), method: :post
 
 - if @user.id == @current_user.id
   %h1 Hi #{@current_user.first_name}!
 - else
   %h1 #{@user.first_name}'s Profile!
-
-%h1.games-container-index Your Game Collection
+- if @user.id == current_user.id
+  %h1.games-container-index Your Game Collection
+- else
+  %h1.games-container-index= "#{@user.full_name}'s Game Collection"
 .games-container-index
   - if @games
     -@games.each do |game|
@@ -16,16 +18,19 @@
           .title= link_to game.title, game
           .sub-game-stats
 %br/
-= link_to 'New Game', new_game_path
+.games-container-index
+  = link_to 'New Game', new_game_path
 
-- if @user.id == @current_user.id
-  .your-friends
-    -@your_friends.each do |friend|
-      =link_to friend.first_name, user_path(friend)
-- elsif @user.id != @current_user.id
-  .their-friends
-    -@their_friends.each do |friend|
-      =link_to friend.first_name, user_path(friend)
+.friends-container
+  %h1 Friends
+  - if @user.id == @current_user.id
+    .your-friends
+      -@your_friends.each do |friend|
+        =link_to friend.first_name, user_path(friend)
+  - elsif @user.id != @current_user.id
+    .their-friends
+      -@their_friends.each do |friend|
+        =link_to friend.first_name, user_path(friend)
 
 
 
