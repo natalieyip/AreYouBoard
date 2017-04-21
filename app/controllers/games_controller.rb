@@ -14,6 +14,7 @@ class GamesController < ApplicationController
     @tags = GameTag.where(game: @game)
     @reviews = Review.where(game: @game)
     @new_review = Review.new()
+    @vote = Vote.new()
   end
 
   # GET /games/new
