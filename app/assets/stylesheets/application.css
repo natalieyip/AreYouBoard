@@ -15,7 +15,36 @@
  */
 
 
+.game-container-index {
+  width: 150px;
+  border: 1px solid gray;
+  margin: 3px;
+  padding: 10px;
+  display: flex;
+  background-color: #80e27e;
+  border-radius: 5px;
+  justify-content: space-between;
+}
+
+.games-container-index {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.option {
+  margin:10px;
+}
+
 .games-container {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.games-new-container {
   margin: auto;
   width: 50%;
 }
@@ -43,7 +72,6 @@
 }
 
 .game-stats {
-  border: 1px solid black;
   padding: 5px;
   width: 40%;
 }
@@ -66,6 +94,7 @@
 
 }
 
+
 .reviews-container {
   margin: auto;
   width: 50%;
@@ -80,7 +109,8 @@
   margin-bottom: 10px;
 }
 
-#title {
+.title {
+  font-size: 20px;
   margin-left: 6px;
 }
 
