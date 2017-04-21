@@ -12,7 +12,6 @@ class GamesController < ApplicationController
   # GET /games/1.json
   def show
     @tags = GameTag.where(game: @game)
-    @vote = Vote.new()
   end
 
   # GET /games/new
