@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   resources :users
   resources :tags
 
+  resources :friends
+  resources :friendsrequests
+
+
   post '/games/:game_id/upvote', to: 'games#upvote'
   post '/games/:game_id/downvote', to: 'games#downvote'
+
 end
