@@ -5,5 +5,4 @@
     %a{:href => "/users/sign_up"} Register
   %li
     %a{:href => "/users/sign_in"} Login
-  %li
-    = link_to('Logout', destroy_user_session_path, :method => :delete)
+  %li= link_to('Logout', destroy_user_session_path, :method => :delete)
