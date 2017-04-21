@@ -1,0 +1,10 @@
+= form_for @vote, url: "/games/#{@game.id}/upvote" do |f|
+  = f.hidden_field :game_id, {value: @game.id}
+  = f.submit "Up"
+
+
+/ = form_for @vote, url: { action: "downvote" } do |f|
+/   = f.hidden_text :game_id, {value: @game.id}
+/   = f.submit "Down"
+
+/ = link_to 'Up', game_votes_path, url: { controller: "vote", action: "upvote", game_id: @game.id }, method: :POST
