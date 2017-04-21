@@ -445,3 +445,600 @@ app/views/games/show.html.haml:24:in `_app_views_games_show_html_haml__198971146
   Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
   Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (90.9ms)
+Started GET "/games/1" for ::1 at 2017-04-20 22:37:45 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered votes/_neutral.html.haml (3.3ms)
+  Rendered games/show.html.haml within layouts/application (18.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (16.8ms)
+Completed 200 OK in 102ms (Views: 61.6ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/games/1/reviews" for ::1 at 2017-04-20 22:37:55 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V9vqyKdho6myfpt0/Ur1s0ZAtZjNNx7PoYvhjL+a5HtHoE/BhdWR8lwNVYvZDnr3nkFlKvsZENRrZD7v9lZqgg==", "review"=>{"title"=>"This is a review", "body"=>"htllo thwere"}, "commit"=>"Create Review", "game_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `user=' for #<Review:0x007ffc66ae08c0>
+Did you mean?  user_id=):
+  
+app/controllers/reviews_controller.rb:6:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (91.6ms)
+Started POST "/games/1/reviews" for ::1 at 2017-04-20 22:38:28 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V9vqyKdho6myfpt0/Ur1s0ZAtZjNNx7PoYvhjL+a5HtHoE/BhdWR8lwNVYvZDnr3nkFlKvsZENRrZD7v9lZqgg==", "review"=>{"title"=>"This is a review", "body"=>"htllo thwere"}, "commit"=>"Create Review", "game_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `user' for #<Review:0x007ffc64bb5bf8>
+Did you mean?  user_id):
+  
+app/controllers/reviews_controller.rb:7:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.3ms)
+Started GET "/games/1" for ::1 at 2017-04-20 22:38:37 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  [1m[36mGameTag Load (0.2ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered votes/_neutral.html.haml (3.2ms)
+  Rendered games/show.html.haml within layouts/application (21.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (4.2ms)
+Completed 200 OK in 80ms (Views: 55.4ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/games/1/reviews" for ::1 at 2017-04-20 22:38:39 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4JozAnUhr5+/1+r2mCzQ5IOGO6+BXOdPcIwwN3LDPlXw4ZYLV5WdxFGkJAm8aF+gW4frHbdy6VS6Y+9UOw+wrA==", "review"=>{"title"=>"sda", "body"=>"asdas"}, "commit"=>"Create Review", "game_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `user' for #<Review:0x007ffc64060b90>
+Did you mean?  user_id):
+  
+app/controllers/reviews_controller.rb:7:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.1ms)
+Started POST "/games/1/reviews" for ::1 at 2017-04-20 22:41:26 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4JozAnUhr5+/1+r2mCzQ5IOGO6+BXOdPcIwwN3LDPlXw4ZYLV5WdxFGkJAm8aF+gW4frHbdy6VS6Y+9UOw+wrA==", "review"=>{"title"=>"sda", "body"=>"asdas"}, "commit"=>"Create Review", "game_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `user' for #<Review:0x007ffc62a4f248>
+Did you mean?  user_id):
+  
+app/controllers/reviews_controller.rb:7:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.8ms)
+Started GET "/games/1" for ::1 at 2017-04-20 22:41:30 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered votes/_neutral.html.haml (2.4ms)
+  Rendered games/show.html.haml within layouts/application (15.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (4.2ms)
+Completed 200 OK in 52ms (Views: 45.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/games/1/reviews" for ::1 at 2017-04-20 22:41:32 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z3vKh7+qsFpCaAZECscwm99qTV5uFQpexviAkMILqLZ3AG+OnR6CAawbyLsug7/fB2ud7Fg7BEUMF1/zi8cmTw==", "review"=>{"title"=>"asdas", "body"=>"asdasdasdas"}, "commit"=>"Create Review", "game_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `user' for #<Review:0x007ffc66ae99e8>
+Did you mean?  user_id):
+  
+app/controllers/reviews_controller.rb:7:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.1ms)
+Started GET "/games/1" for ::1 at 2017-04-20 22:42:14 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  [1m[36mGameTag Load (0.2ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered votes/_neutral.html.haml (2.9ms)
+  Rendered games/show.html.haml within layouts/application (18.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (16.2ms)
+Completed 200 OK in 118ms (Views: 71.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/games/1/reviews" for ::1 at 2017-04-20 22:42:17 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aX+/wW4xQMkbftleioX5QFLwCXjM1sA5F+lt3yftE5N5BBrITIVykvUNF6GuwXYEivHZyvr4ziLdBrK8biGdag==", "review"=>{"title"=>"asdas", "body"=>"asdas"}, "commit"=>"Create Review", "game_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `user' for #<Review:0x007ffc638907d0>
+Did you mean?  user_id):
+  
+app/controllers/reviews_controller.rb:8:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (98.1ms)
+Started GET "/games/1" for ::1 at 2017-04-20 22:42:58 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  [1m[36mGameTag Load (0.2ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered votes/_neutral.html.haml (3.6ms)
+  Rendered games/show.html.haml within layouts/application (27.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (20.5ms)
+Completed 200 OK in 153ms (Views: 86.7ms | ActiveRecord: 15.7ms)
+
+
+Started POST "/games/1/reviews" for ::1 at 2017-04-20 22:43:02 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7tjB/Dxjnmplv0rF1jQYNEJQJbNfvBNaHFH3JIaIbHH+o2T1HtesMYvMhDrycJdwmlH1AWmSHUHWvihHz0TiiA==", "review"=>{"title"=>"asdas", "body"=>"asdasdasdasdasd"}, "commit"=>"Create Review", "game_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `user' for #<Review:0x007ffc63a40418>
+Did you mean?  user_id):
+  
+app/controllers/reviews_controller.rb:8:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (93.5ms)
+Started GET "/games/1" for ::1 at 2017-04-20 22:45:09 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered votes/_neutral.html.haml (3.2ms)
+  Rendered games/show.html.haml within layouts/application (20.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (16.4ms)
+Completed 200 OK in 117ms (Views: 69.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/games/1/reviews" for ::1 at 2017-04-20 22:45:15 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eVU1Becqkf5YAOcXNzpW6jPpJJTfCJqPFsMpCWk7VwNpLpAMxZ6jpbZzKegTftmu6+j0JukmlJTcLPZqIPfZ+g==", "review"=>{"title"=>"sadasdas", "body"=>"asdasdasdas"}, "commit"=>"Create Review", "game_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `user' for #<Review:0x007ffc5d49f500>
+Did you mean?  user_id):
+  
+app/controllers/reviews_controller.rb:8:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.4ms)
+Started POST "/games/1/reviews" for ::1 at 2017-04-20 22:47:13 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eVU1Becqkf5YAOcXNzpW6jPpJJTfCJqPFsMpCWk7VwNpLpAMxZ6jpbZzKegTftmu6+j0JukmlJTcLPZqIPfZ+g==", "review"=>{"title"=>"sadasdas", "body"=>"asdasdasdas"}, "commit"=>"Create Review", "game_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `user=' for #<Review:0x007ffc64d6e0f8>
+Did you mean?  user_id=):
+  
+app/controllers/reviews_controller.rb:7:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.7ms)
+Started POST "/games/1/reviews" for ::1 at 2017-04-20 22:47:26 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eVU1Becqkf5YAOcXNzpW6jPpJJTfCJqPFsMpCWk7VwNpLpAMxZ6jpbZzKegTftmu6+j0JukmlJTcLPZqIPfZ+g==", "review"=>{"title"=>"sadasdas", "body"=>"asdasdasdas"}, "commit"=>"Create Review", "game_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `user' for #<Review:0x007ffc62e00a90>
+Did you mean?  user_id):
+  
+app/controllers/reviews_controller.rb:9:in `create'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.4ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.6ms)
+Started POST "/games/1/reviews" for ::1 at 2017-04-20 22:49:48 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eVU1Becqkf5YAOcXNzpW6jPpJJTfCJqPFsMpCWk7VwNpLpAMxZ6jpbZzKegTftmu6+j0JukmlJTcLPZqIPfZ+g==", "review"=>{"title"=>"sadasdas", "body"=>"asdasdasdas"}, "commit"=>"Create Review", "game_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "game_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["game_id", 1], ["title", "sadasdas"], ["body", "asdasdasdas"], ["created_at", 2017-04-21 05:49:49 UTC], ["updated_at", 2017-04-21 05:49:49 UTC]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games
+Completed 302 Found in 47ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/games" for ::1 at 2017-04-20 22:49:49 -0700
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/_index.html.haml (10.1ms)
+  Rendered index.html.haml within layouts/application (13.1ms)
+  Rendered layouts/_nav_bar.html.haml (2.9ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-20 22:49:52 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered games/show.html.haml within layouts/application (19.5ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Review:0x007ffc5ce9d5a8>
+Did you mean?  user_id):
+    24:     - @reviews.each do |review|
+    25:       %h3= review.title
+    26:       %p= review.body
+    27:       %p= "Posted by #{review.user.username}"
+    28:   %h3 Create a New Review
+    29:   = form_for [@game, @new_review] do |f|
+    30:     = f.label 'Title'
+  
+app/views/games/show.html.haml:27:in `block in _app_views_games_show_html_haml__1989711464895605983_70360989012480'
+app/views/games/show.html.haml:24:in `_app_views_games_show_html_haml__1989711464895605983_70360989012480'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (21.2ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (109.1ms)
+Started GET "/games" for ::1 at 2017-04-20 22:51:07 -0700
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/_index.html.haml (31.2ms)
+  Rendered index.html.haml within layouts/application (34.7ms)
+  Rendered layouts/_nav_bar.html.haml (2.7ms)
+Completed 200 OK in 84ms (Views: 72.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-20 22:51:08 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  [1m[36mGameTag Load (0.4ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered games/show.html.haml within layouts/application (20.6ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Review:0x007ffc6450e228>
+Did you mean?  user_id):
+    24:     - @reviews.each do |review|
+    25:       %h3= review.title
+    26:       %p= review.body
+    27:       %p= "Posted by #{review.user.username}"
+    28:   %h3 Create a New Review
+    29:   = form_for [@game, @new_review] do |f|
+    30:     = f.label 'Title'
+  
+app/views/games/show.html.haml:27:in `block in _app_views_games_show_html_haml__1989711464895605983_70361010049040'
+app/views/games/show.html.haml:24:in `_app_views_games_show_html_haml__1989711464895605983_70361010049040'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.6ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (121.3ms)
+Started GET "/games/1" for ::1 at 2017-04-20 22:52:41 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  [1m[36mGameTag Load (0.7ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/show.html.haml within layouts/application (44.8ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for #<User:0x007ffc642fe6b8>):
+    24:     - @reviews.each do |review|
+    25:       %h3= review.title
+    26:       %p= review.body
+    27:       %p= "Posted by #{User.find(review.user_id).username}"
+    28:   %h3 Create a New Review
+    29:   = form_for [@game, @new_review] do |f|
+    30:     = f.label 'Title'
+  
+app/views/games/show.html.haml:27:in `block in _app_views_games_show_html_haml__1989711464895605983_70360983196140'
+app/views/games/show.html.haml:24:in `_app_views_games_show_html_haml__1989711464895605983_70360983196140'
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Daniel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (100.4ms)
+Started GET "/games/1" for ::1 at 2017-04-20 22:52:53 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  [1m[36mGameTag Load (0.4ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered votes/_neutral.html.haml (3.8ms)
+  Rendered games/show.html.haml within layouts/application (24.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (3.7ms)
+Completed 200 OK in 72ms (Views: 65.6ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-04-20 22:53:01 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WZ/yIlykB8MaWyjf5jt+wiThGjLFlNwzKCKEl87fEaFJ5FcrfhA1mPQo5iDCf/GG/ODKgPO60ijizVv0hxOfWA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-20 22:53:01 -0700
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/_index.html.haml (12.9ms)
+  Rendered index.html.haml within layouts/application (15.8ms)
+  Rendered layouts/_nav_bar.html.haml (2.6ms)
+Completed 200 OK in 63ms (Views: 61.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-04-20 22:53:05 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.haml within layouts/application
+  Rendered devise/shared/_links.html.haml (2.5ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (16.0ms)
+  Rendered layouts/_nav_bar.html.haml (4.7ms)
+Completed 200 OK in 60ms (Views: 58.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-04-20 22:53:09 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.haml (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_nav_bar.html.haml (3.5ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-04-20 22:53:15 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U/IhfTyxBXL+i8W/tvyXBMf9KUcGqdBzwLz4G70qhOz40NbLjNdXPlkrtoASEMXKE6Kxaj2O7eY9kAf0uAj+Jw==", "user"=>{"email"=>"dan@dan.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@dan.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U/IhfTyxBXL+i8W/tvyXBMf9KUcGqdBzwLz4G70qhOz40NbLjNdXPlkrtoASEMXKE6Kxaj2O7eY9kAf0uAj+Jw==", "user"=>{"email"=>"dan@dan.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.haml (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_nav_bar.html.haml (3.0ms)
+Completed 200 OK in 204ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-04-20 22:53:18 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.haml within layouts/application
+  Rendered devise/shared/_links.html.haml (3.3ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (11.6ms)
+  Rendered layouts/_nav_bar.html.haml (2.3ms)
+Completed 200 OK in 54ms (Views: 52.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-04-20 22:53:33 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vmrTnc2/EZvolL1xNG95Y0XooShyqE8DYvAy2t244RgVSCQrfdlD1080zk6Qgyutkbc5BUmPcpaf3M012Jqb0w==", "user"=>{"first_name"=>"Daniel", "last_name"=>"Welsh", "email"=>"dan@dandan.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dan@dandan.com"], ["LIMIT", 1]]
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@dandan.com"], ["encrypted_password", "$2a$11$kClZulMVpXrtjowy5u8wBuAn16xSWB5Jb3G0EcAO3dlDGxgkO8pVC"], ["created_at", 2017-04-21 05:53:33 UTC], ["updated_at", 2017-04-21 05:53:33 UTC], ["first_name", "Daniel"], ["last_name", "Welsh"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2017-04-21 05:53:33 UTC], ["last_sign_in_at", 2017-04-21 05:53:33 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2017-04-21 05:53:33 UTC], ["id", 2]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 213ms (ActiveRecord: 37.9ms)
+
+
+Started GET "/users/2" for ::1 at 2017-04-20 22:53:33 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered users/show.html.haml within layouts/application (6.3ms)
+  Rendered layouts/_nav_bar.html.haml (2.4ms)
+Completed 200 OK in 50ms (Views: 43.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-20 22:53:38 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  [1m[36mGameTag Load (0.4ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered votes/_neutral.html.haml (2.6ms)
+  Rendered games/show.html.haml within layouts/application (20.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (4.8ms)
+Completed 200 OK in 64ms (Views: 58.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-20 22:54:35 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered votes/_neutral.html.haml (2.5ms)
+  Rendered games/show.html.haml within layouts/application (35.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (4.4ms)
+Completed 200 OK in 118ms (Views: 70.1ms | ActiveRecord: 3.1ms)
+
+
