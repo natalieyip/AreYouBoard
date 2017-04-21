@@ -5702,3 +5702,14 @@ Processing by GamesController#show as HTML
 Completed 200 OK in 67ms (Views: 61.4ms | ActiveRecord: 2.6ms)
 
 
+Started GET "/games" for ::1 at 2017-04-21 13:43:45 -0700
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/_index.html.haml (34.8ms)
+  Rendered index.html.haml within layouts/application (52.5ms)
+  Rendered layouts/_nav_bar.html.haml (8.6ms)
+Completed 200 OK in 169ms (Views: 162.0ms | ActiveRecord: 1.6ms)
+
+
