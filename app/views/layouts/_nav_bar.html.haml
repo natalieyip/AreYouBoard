@@ -2,7 +2,7 @@
 .header-nav
   -if current_user
     .nav-link= link_to 'Home', games_path
-    .nav-link= link_to current_user.first_name, "/users/:id"
+    .nav-link= link_to current_user.first_name, user_path(current_user)
     .nav-link= link_to 'Logout', destroy_user_session_path, :method => :delete
   -else
     .nav-link= link_to "Register", new_user_registration_path
