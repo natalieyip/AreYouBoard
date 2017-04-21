@@ -1,7 +1,12 @@
 %ul.header_nav
+-if current_user
   %li
-    %a{:href => "/games/index"} Home
+    %a{:href => "/"} Home
+  %li= link_to(current_user.first_name, "/users/:id")
+  %li= link_to('Logout', destroy_user_session_path, :method => :delete)
+-else
   %li
     %a{:href => "/users/sign_up"} Register
   %li
     %a{:href => "/users/sign_in"} Login
+  

@@ -1,3 +1,11 @@
+def index
+  @friends = current_user.friends
+end
+
+def new
+    @request = Friendsrequest.new
+  end
+
 def create
   @friendship = current_user.friendships.build(:friend_id => params[:friend_id])
   if @friendship.save
