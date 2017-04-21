@@ -4,7 +4,7 @@
   .game-container
     .votes
       .vote-count= @game.votes.sum(:value)
-      = render partial: "votes/neutral"
+      = render partial: "votes/neutral_game"
     .game-stats
       %h1= @game.title
       .sub-game-stats

@@ -4224,3 +4224,863 @@ Processing by GamesController#show as HTML
 Completed 200 OK in 67ms (Views: 60.7ms | ActiveRecord: 2.1ms)
 
 
+Started GET "/" for ::1 at 2017-04-21 11:29:14 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (17.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (12.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/_index.html.haml (95.3ms)
+  Rendered index.html.haml within layouts/application (103.0ms)
+  Rendered layouts/_nav_bar.html.haml (2.7ms)
+Completed 200 OK in 455ms (Views: 410.0ms | ActiveRecord: 29.0ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:29:27 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (12.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (26.3ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral.html.haml (23.8ms)
+  [1m[36mGameTag Load (1.1ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered games/show.html.haml within layouts/application (149.3ms)
+  Rendered layouts/_nav_bar.html.haml (3.1ms)
+Completed 200 OK in 295ms (Views: 189.9ms | ActiveRecord: 56.9ms)
+
+
+Started POST "/games/1/upvote" for ::1 at 2017-04-21 11:29:31 -0700
+Processing by GamesController#upvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zEkjmF0IXTjzs+HGwieLu52OKUZWaj2eO5slIqX5HGBcK8HX66kMOGXu0IuJwWw4xmj0ie7hNsuNuJ5YVOlGzQ==", "vote"=>{"game_id"=>"1"}, "commit"=>"Up", "game_id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/games_controller.rb:81:in `upvote'
+  Rendering /Users/natalie.yip/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/natalie.yip/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/natalie.yip/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/natalie.yip/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/natalie.yip/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/natalie.yip/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/natalie.yip/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/natalie.yip/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.1ms)
+Started GET "/users/sign_in" for ::1 at 2017-04-21 11:29:39 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.haml (15.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.5ms)
+  Rendered layouts/_nav_bar.html.haml (2.8ms)
+Completed 200 OK in 121ms (Views: 75.5ms | ActiveRecord: 19.6ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-04-21 11:29:49 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LwC2KDpgxzpqUkntg6rjrmzj0XVqVE83WLR2CVW4ibi/YlRnjMGWOvwPeKDITAQtNwUMutLfRGLul81zpKjTFQ==", "user"=>{"email"=>"james@james.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "james@james.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 15ms (ActiveRecord: 8.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LwC2KDpgxzpqUkntg6rjrmzj0XVqVE83WLR2CVW4ibi/YlRnjMGWOvwPeKDITAQtNwUMutLfRGLul81zpKjTFQ==", "user"=>{"email"=>"james@james.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.haml (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_nav_bar.html.haml (4.7ms)
+Completed 200 OK in 235ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-04-21 11:29:52 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c2trok1ePRgvT2kwWtF/U52Zs2xIyiDGQAZDiBMH96bjCYnt+/9sGLkSWH0RN5jQxn9uo/BBK5P2Jfjy4hetCw==", "user"=>{"email"=>"james@james.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "james@james.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c2trok1ePRgvT2kwWtF/U52Zs2xIyiDGQAZDiBMH96bjCYnt+/9sGLkSWH0RN5jQxn9uo/BBK5P2Jfjy4hetCw==", "user"=>{"email"=>"james@james.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.haml (8.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_nav_bar.html.haml (1.9ms)
+Completed 200 OK in 216ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-04-21 11:29:58 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.haml within layouts/application
+  Rendered devise/shared/_links.html.haml (3.3ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (10.8ms)
+  Rendered layouts/_nav_bar.html.haml (2.1ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-04-21 11:30:07 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckp5eU9A5rwVt8Yxxc7JVUSbq6nFawGMxuVoxvk7VbziKJs2+eG3vIPq93yOKC7WH312Zn3gCtlwxtO8CCsPEQ==", "user"=>{"first_name"=>"nat", "last_name"=>"ant", "email"=>"nat@nat.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nat@nat.com"], ["LIMIT", 1]]
+  [1m[35m (11.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.haml within layouts/application
+  Rendered devise/shared/_links.html.haml (2.9ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (10.6ms)
+  Rendered layouts/_nav_bar.html.haml (2.0ms)
+Completed 200 OK in 243ms (Views: 40.5ms | ActiveRecord: 11.8ms)
+
+
+Started POST "/users" for ::1 at 2017-04-21 11:30:16 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sUoKjbTfZ1TgMykReO4fpZt+VzEbzgpsE6Ad/6InLtQhKOjCAn42VHZuGFwzCPgmwJiK/qNFATmlg6aFUzd0eQ==", "user"=>{"first_name"=>"nat", "last_name"=>"ant", "email"=>"nat@n.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nat@n.com"], ["LIMIT", 1]]
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "nat@n.com"], ["encrypted_password", "$2a$11$K/w40SMVZPhmBAzwV0B3oeag.EclopMQGbANuSZfr3FJV6ly9YpTm"], ["created_at", 2017-04-21 18:30:16 UTC], ["updated_at", 2017-04-21 18:30:16 UTC], ["first_name", "nat"], ["last_name", "ant"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (23.1ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2017-04-21 18:30:16 UTC], ["last_sign_in_at", 2017-04-21 18:30:16 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2017-04-21 18:30:16 UTC], ["id", 2]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 221ms (ActiveRecord: 30.6ms)
+
+
+Started GET "/users/2" for ::1 at 2017-04-21 11:30:16 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered users/show.html.haml within layouts/application (5.3ms)
+  Rendered layouts/_nav_bar.html.haml (2.1ms)
+Completed 200 OK in 51ms (Views: 34.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:30:21 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral.html.haml (2.7ms)
+  [1m[36mGameTag Load (0.6ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered games/show.html.haml within layouts/application (26.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (3.6ms)
+Completed 200 OK in 65ms (Views: 56.2ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/games/1/upvote" for ::1 at 2017-04-21 11:30:25 -0700
+Processing by GamesController#upvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KhQEm9Iuv2CC/vMdXrpmpZwXFD5jp8PHyw5EjLX1ZD26dubUZI/uYBSjwlAVXIEmx/HJ8dssyJJ9Lf/2ROU+kA==", "vote"=>{"game_id"=>"1"}, "commit"=>"Up", "game_id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO "votes" ("voteable_type", "voteable_id", "user_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["voteable_type", "Game"], ["voteable_id", 1], ["user_id", 2], ["value", 1], ["created_at", 2017-04-21 18:30:25 UTC], ["updated_at", 2017-04-21 18:30:25 UTC]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 29ms (ActiveRecord: 15.1ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:30:25 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral.html.haml (3.5ms)
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered games/show.html.haml within layouts/application (18.1ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (5.1ms)
+Completed 200 OK in 58ms (Views: 50.4ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/games/1/downvote" for ::1 at 2017-04-21 11:30:26 -0700
+Processing by GamesController#downvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3/ItNa/PDDGO4n/PsGfe9OOZz/TYUOFlgEYDrhOABmtPkM96GW5dMRi/ToL7gTl3uH8SO2Db6jA2ZbjU4pBcxg==", "vote"=>{"game_id"=>"1"}, "commit"=>"Down", "game_id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", 0], ["updated_at", 2017-04-21 18:30:26 UTC], ["id", 5]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 18ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:30:26 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral.html.haml (2.5ms)
+  [1m[36mGameTag Load (0.6ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered games/show.html.haml within layouts/application (22.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (3.7ms)
+Completed 200 OK in 57ms (Views: 48.7ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/games/1/downvote" for ::1 at 2017-04-21 11:30:26 -0700
+Processing by GamesController#downvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AJaZeZPz5G0lr1tyM7uMuWwHPONH5FXDL7gdDtkNYtmQ9Hs2JVK1bbPyaj94XWs6N+HhLP9vXpaZm6Z0KB04dA==", "vote"=>{"game_id"=>"1"}, "commit"=>"Down", "game_id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -1], ["updated_at", 2017-04-21 18:30:26 UTC], ["id", 5]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 16ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:30:26 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral.html.haml (3.5ms)
+  [1m[36mGameTag Load (0.5ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered games/show.html.haml within layouts/application (19.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (3.3ms)
+Completed 200 OK in 50ms (Views: 43.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/games/1/downvote" for ::1 at 2017-04-21 11:30:27 -0700
+Processing by GamesController#downvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FGImASmgEIp86i54heC1176YToM5k8jy9rF8UJAZjwOEAMROnwFBiuq3HzXOBlJU5X6TTIEYw6dAkscqYQnVrg==", "vote"=>{"game_id"=>"1"}, "commit"=>"Down", "game_id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.5ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -2], ["updated_at", 2017-04-21 18:30:27 UTC], ["id", 5]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 23ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:30:27 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral.html.haml (3.2ms)
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered games/show.html.haml within layouts/application (22.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (4.0ms)
+Completed 200 OK in 69ms (Views: 63.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/games/1/downvote" for ::1 at 2017-04-21 11:30:28 -0700
+Processing by GamesController#downvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9sjNVG4RAfDbctnG6XO0UmzvxhU1z75FswM0/tJKLIBmqi8b2LBQ8E0v6IuilVPRNwkb2o1EtRAFII+EI1p2LQ==", "vote"=>{"game_id"=>"1"}, "commit"=>"Down", "game_id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.6ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -3], ["updated_at", 2017-04-21 18:30:28 UTC], ["id", 5]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 23ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:30:28 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral.html.haml (3.2ms)
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered games/show.html.haml within layouts/application (27.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (5.9ms)
+Completed 200 OK in 72ms (Views: 64.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/games/1/downvote" for ::1 at 2017-04-21 11:30:28 -0700
+Processing by GamesController#downvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"klRjikZ5Gsx0OyvS67xAbFWJRmmQqVvzZ7XEr9E2NJcCNoHF8NhLzOJmGp+gWqfvDm+bpigiUKbRln/VICZuOg==", "vote"=>{"game_id"=>"1"}, "commit"=>"Down", "game_id"=>"1"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.6ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -4], ["updated_at", 2017-04-21 18:30:28 UTC], ["id", 5]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 19ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:30:28 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral.html.haml (4.4ms)
+  [1m[36mGameTag Load (0.6ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered games/show.html.haml within layouts/application (33.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (6.2ms)
+Completed 200 OK in 78ms (Views: 69.8ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/games/1/downvote" for ::1 at 2017-04-21 11:30:29 -0700
+Processing by GamesController#downvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S5nPW1SW6fwms1zjABkdJQnxR67jqHSjxX+2/ZU2Q6vb+y0U4je4/LDuba5L//qmUheaYVsjf/ZzXA2HZCYZBg==", "vote"=>{"game_id"=>"1"}, "commit"=>"Down", "game_id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -5], ["updated_at", 2017-04-21 18:30:29 UTC], ["id", 5]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 17ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:30:29 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral.html.haml (2.3ms)
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered games/show.html.haml within layouts/application (18.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (6.2ms)
+Completed 200 OK in 57ms (Views: 51.8ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/games/1/upvote" for ::1 at 2017-04-21 11:30:30 -0700
+Processing by GamesController#upvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7yshDrWLLW/RJ84U+L6eUfh9kkZyjoruvs1GE5+a0qF/ScNBAyp8b0d6/1mzWHnSo5tPicoFgbsI7v1pboqIDA==", "vote"=>{"game_id"=>"1"}, "commit"=>"Up", "game_id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.5ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -4], ["updated_at", 2017-04-21 18:30:30 UTC], ["id", 5]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 20ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:30:30 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral.html.haml (4.5ms)
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  Rendered games/show.html.haml within layouts/application (22.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (6.5ms)
+Completed 200 OK in 68ms (Views: 61.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:40:20 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (4.9ms)
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/show.html.haml within layouts/application (63.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (4.3ms)
+Completed 200 OK in 195ms (Views: 120.6ms | ActiveRecord: 17.8ms)
+
+
+Started POST "/games/1/upvote" for ::1 at 2017-04-21 11:40:24 -0700
+Processing by GamesController#upvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nkGKuelXkVxJ6+PX18yXVa9MJYSeIiWquiC4S8FORQcOI2j2X/bAXN+20pqcKnDW9Kr4SyapLv8MAwMxMF4fqg==", "vote"=>{"game_id"=>"1"}, "commit"=>"Up", "game_id"=>"1"}
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (2.6ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -3], ["updated_at", 2017-04-21 18:40:24 UTC], ["id", 5]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 35ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:40:24 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (4.2ms)
+  [1m[36mGameTag Load (0.7ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/show.html.haml within layouts/application (27.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (6.0ms)
+Completed 200 OK in 65ms (Views: 58.4ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/games/1/upvote" for ::1 at 2017-04-21 11:40:26 -0700
+Processing by GamesController#upvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xqDw1ekQeUSRu+EkkW6w14JyrXUZPUjotFQEKLh1809WwhKaX7EoRAfm0GnaiFdU2ZRwuqG2Q70Cd79SSWWp4g==", "vote"=>{"game_id"=>"1"}, "commit"=>"Up", "game_id"=>"1"}
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (1.2ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -2], ["updated_at", 2017-04-21 18:40:26 UTC], ["id", 5]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 25ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:40:26 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (3.3ms)
+  [1m[36mGameTag Load (0.4ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/show.html.haml within layouts/application (27.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (4.6ms)
+Completed 200 OK in 95ms (Views: 83.4ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/games/1/downvote" for ::1 at 2017-04-21 11:40:27 -0700
+Processing by GamesController#downvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sR+B82Yw1Fj1isWndINhokaNWlWa5h6hTy9iG3X/M0AhfWO80JGFWGPX9Oo/ZYYhHWuHmiJtFfT5DNlhhO9p7Q==", "vote"=>{"game_id"=>"1"}, "commit"=>"Down", "game_id"=>"1"}
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.5ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -3], ["updated_at", 2017-04-21 18:40:27 UTC], ["id", 5]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 22ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:40:27 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (3.3ms)
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/show.html.haml within layouts/application (27.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (6.2ms)
+Completed 200 OK in 69ms (Views: 61.2ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/games/1/upvote" for ::1 at 2017-04-21 11:40:27 -0700
+Processing by GamesController#upvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9TZ8+2bkyqvw0tspOfQy4HvYfRWjexlNdiB4dRz5QIZlVJ600EWbq2aP6mRyEtVjID6g2hvwEhjAA8MP7ekaKw==", "vote"=>{"game_id"=>"1"}, "commit"=>"Up", "game_id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.7ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -2], ["updated_at", 2017-04-21 18:40:27 UTC], ["id", 5]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 25ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:40:27 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (4.9ms)
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/show.html.haml within layouts/application (44.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (6.6ms)
+Completed 200 OK in 94ms (Views: 85.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:41:11 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (25.8ms)
+  [1m[36mGameTag Load (1.0ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/show.html.haml within layouts/application (163.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (7.4ms)
+Completed 200 OK in 593ms (Views: 481.5ms | ActiveRecord: 23.9ms)
+
+
+Started POST "/games/1/downvote" for ::1 at 2017-04-21 11:41:20 -0700
+Processing by GamesController#downvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CTbs/9O4luz5Sy867pz8+MeiJny2hOKAPdXRBk8D0viZVA6wZRnH7G8WHneleht7nET7sw4P6dWL9mp8vhOIVQ==", "vote"=>{"game_id"=>"1"}, "commit"=>"Down", "game_id"=>"1"}
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (1.6ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -3], ["updated_at", 2017-04-21 18:41:20 UTC], ["id", 5]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 34ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:41:20 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (3.7ms)
+  [1m[36mGameTag Load (0.8ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/show.html.haml within layouts/application (28.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (44.3ms)
+Completed 200 OK in 109ms (Views: 97.2ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/games/1/upvote" for ::1 at 2017-04-21 11:41:21 -0700
+Processing by GamesController#upvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rFL/Lj1HFm1rBMc2AqZA4t2ReLLDL8ba4dquxdz7KjQ8MB1hi+ZHbf1Z9ntJQKdhhnelfXukzY9X+RW/LetwmQ==", "vote"=>{"game_id"=>"1"}, "commit"=>"Up", "game_id"=>"1"}
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (1.7ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -2], ["updated_at", 2017-04-21 18:41:21 UTC], ["id", 5]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 31ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:41:21 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (4.2ms)
+  [1m[36mGameTag Load (0.4ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/show.html.haml within layouts/application (28.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (6.2ms)
+Completed 200 OK in 76ms (Views: 69.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/games/1/upvote" for ::1 at 2017-04-21 11:41:22 -0700
+Processing by GamesController#upvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YCG9sFJ040e1Efpf9yeinOQ/El4SGpMfJxfZOiLzuGXwQ1//5NWyRyNMyxK8wUUfv9nPkaqRmEqRNGJA0+PiyA==", "vote"=>{"game_id"=>"1"}, "commit"=>"Up", "game_id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 1 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -1], ["updated_at", 2017-04-21 18:41:22 UTC], ["id", 5]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 18ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/games/1" for ::1 at 2017-04-21 11:41:22 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 1], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (3.8ms)
+  [1m[36mGameTag Load (0.5ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 1[0m
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered games/show.html.haml within layouts/application (26.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (7.4ms)
+Completed 200 OK in 80ms (Views: 70.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/games" for ::1 at 2017-04-21 11:41:31 -0700
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered games/_index.html.haml (10.2ms)
+  Rendered index.html.haml within layouts/application (16.7ms)
+  Rendered layouts/_nav_bar.html.haml (4.0ms)
+Completed 200 OK in 89ms (Views: 87.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/games/3" for ::1 at 2017-04-21 11:41:33 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 3], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (3.6ms)
+  [1m[36mGameTag Load (0.5ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 3[0m
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 3[0m
+  Rendered games/show.html.haml within layouts/application (26.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (4.9ms)
+Completed 200 OK in 73ms (Views: 65.4ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/games/3/upvote" for ::1 at 2017-04-21 11:41:35 -0700
+Processing by GamesController#upvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AhHDiLt3m9ZcFHMlJsIviG7fiflquXPSG5vWSEr+EAKScyHHDdbK1spJQmhtJMgLNTlUNtIyeIetuG0yu+5Krw==", "vote"=>{"game_id"=>"3"}, "commit"=>"Up", "game_id"=>"3"}
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (1.6ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 3 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "votes" ("voteable_type", "voteable_id", "user_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["voteable_type", "Game"], ["voteable_id", 3], ["user_id", 2], ["value", 1], ["created_at", 2017-04-21 18:41:35 UTC], ["updated_at", 2017-04-21 18:41:35 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/3
+Completed 302 Found in 21ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/games/3" for ::1 at 2017-04-21 11:41:35 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 3], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (2.5ms)
+  [1m[36mGameTag Load (0.5ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 3[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 3[0m
+  Rendered games/show.html.haml within layouts/application (21.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (6.6ms)
+Completed 200 OK in 77ms (Views: 69.6ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/games/3/downvote" for ::1 at 2017-04-21 11:41:35 -0700
+Processing by GamesController#downvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JOh9yL5R8STq9c6aS1Wi0Pzi9oahpoiuBJl8Si5EEPe0ip+HCPCgJHyo/9cAs0VTpwQrSRktg/uyuscw31RKWg==", "vote"=>{"game_id"=>"3"}, "commit"=>"Down", "game_id"=>"3"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 3 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", 0], ["updated_at", 2017-04-21 18:41:35 UTC], ["id", 6]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/3
+Completed 302 Found in 18ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/games/3" for ::1 at 2017-04-21 11:41:35 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 3], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (3.1ms)
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 3[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 3[0m
+  Rendered games/show.html.haml within layouts/application (22.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (4.5ms)
+Completed 200 OK in 76ms (Views: 62.4ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/games/3/downvote" for ::1 at 2017-04-21 11:41:36 -0700
+Processing by GamesController#downvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DgzlcEEn8SOoExZ2I9EAgdF0ZRoQI1wQCIrhc4n60aSebgc/94agIz5OJztoN+cCipK41aioV0W+qVoJeOqLCQ==", "vote"=>{"game_id"=>"3"}, "commit"=>"Down", "game_id"=>"3"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.4ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 3 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -1], ["updated_at", 2017-04-21 18:41:36 UTC], ["id", 6]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/3
+Completed 302 Found in 17ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/games/3" for ::1 at 2017-04-21 11:41:36 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 3], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (2.6ms)
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 3[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 3[0m
+  Rendered games/show.html.haml within layouts/application (21.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (5.6ms)
+Completed 200 OK in 65ms (Views: 56.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/games/3/downvote" for ::1 at 2017-04-21 11:41:37 -0700
+Processing by GamesController#downvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4jBq/BH96teblgQ32qM10l8wsem8Zb8XTd67JJ+WPpxyUoizp1y71w3LNXqRRdJRBNZsJgTutEL7/QBeboZkMQ==", "vote"=>{"game_id"=>"3"}, "commit"=>"Down", "game_id"=>"3"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVote Load (0.6ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."voteable_type" = 'Game' AND "votes"."voteable_id" = 3 AND "votes"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "votes" SET "value" = $1, "updated_at" = $2 WHERE "votes"."id" = $3[0m  [["value", -2], ["updated_at", 2017-04-21 18:41:37 UTC], ["id", 6]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/3
+Completed 302 Found in 17ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/games/3" for ::1 at 2017-04-21 11:41:37 -0700
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering games/show.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("votes"."value") FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2[0m  [["voteable_id", 3], ["voteable_type", "Game"]]
+  Rendered votes/_neutral_game.html.haml (3.2ms)
+  [1m[36mGameTag Load (0.3ms)[0m  [1m[34mSELECT "game_tags".* FROM "game_tags" WHERE "game_tags"."game_id" = 3[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."game_id" = 3[0m
+  Rendered games/show.html.haml within layouts/application (22.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_nav_bar.html.haml (6.1ms)
+Completed 200 OK in 73ms (Views: 64.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2017-04-21 11:41:40 -0700
+Processing by GamesController#index as HTML
+  Rendering index.html.haml within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered games/_index.html.haml (19.6ms)
+  Rendered index.html.haml within layouts/application (22.1ms)
+  Rendered layouts/_nav_bar.html.haml (2.1ms)
+Completed 200 OK in 61ms (Views: 59.2ms | ActiveRecord: 0.9ms)
+
+
