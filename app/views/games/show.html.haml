@@ -38,7 +38,7 @@
           = render partial: "votes/neutral_review", locals: {review: review }
         .review-container-inner
           %h3= review.title
-          %p.posted-by= "Posted by #{User.find(review.user_id).full_name}"
+          %p.posted-by= link_to "Posted by: #{User.find(review.user_id).full_name}", User.find(review.user_id)
           %p= review.body
   .review-container
     %h3 Create a New Review
