@@ -1,0 +1,9 @@
+.vote-buttons-review
+  = form_for @vote, url: "/reviews/#{review.id}/upvote"  do |f|
+    = f.hidden_field :review_id, {value: review.id}
+    = f.submit "Up"
+
+
+  / = form_for @vote, url: "/games/#{@game.id}/downvote" do |f|
+  /   = f.hidden_field :game_id, {value: @game.id}
+  /   = f.submit "Down"
