@@ -49,3 +49,9 @@
   border: 1px solid black;
   padding: 5px;
 }
+
+.reviews-container {
+  border: 1px solid blue;
+  margin: auto;
+  width: 50%;
+}

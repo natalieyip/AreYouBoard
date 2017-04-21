@@ -12,6 +12,9 @@ class GamesController < ApplicationController
   # GET /games/1.json
   def show
     @tags = GameTag.where(game: @game)
+    @reviews = Review.where(game: @game)
+    @new_review = Review.new()
+    @vote = Vote.new()
   end
 
   # GET /games/new
@@ -69,6 +72,19 @@ class GamesController < ApplicationController
       format.html { redirect_to games_url, notice: 'Game was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+    @vote = Vote.find_by(voteable_type: :game, voteable_id: params[:game_id], user_id: current_user.id)
+    if @vote
+      @vote.value += 1
+    else
+      @vote = Vote.new(voteable_type: :game, voteable_id: params[:game_id], user_id: current_user.id, value: 1 )
+      redirect_to games_path
+    end
+  end
+
+  def downvote
   end
 
   private

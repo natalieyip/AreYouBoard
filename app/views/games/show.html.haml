@@ -23,4 +23,12 @@
     - @reviews.each do |review|
       %h3= review.title
       %p= review.text
+  %h3 Create a New Review
+  = form_for [@game, @new_review] do |f|
+    = f.label 'Title'
+    = f.text_field :title
+    = f.label 'Body'
+    = f.text_field :body
+    = f.submit
 = render partial: "votes/neutral"
+
