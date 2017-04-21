@@ -20,10 +20,11 @@
           = link_to tag.tag.name, tag.tag
     .game-description
       %p= "Description: #{@game.description}"
-  .game-functionality
-    .link= link_to 'Edit', edit_game_path(@game)
-    .link= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }
-    .link= link_to 'Back', games_path
+  - if @game.user_id == current_user.id
+    .game-functionality
+      .link= link_to 'Edit', edit_game_path(@game)
+      .link= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }
+      .link= link_to 'Back', games_path
 .reviews-container
   %h3 Reviews
   - if @reviews

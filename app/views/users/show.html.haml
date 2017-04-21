@@ -1,22 +1,25 @@
 - if @user.id == @current_user.id
-	%h1 Hi #{@current_user.first_name}!
+  %h1 Hi #{@current_user.first_name}!
 - else
-	%h1 #{@user.first_name}'s Profile!
+  %h1 #{@user.first_name}'s Profile!
 
-%h2 Your Games Collection:
-.game-container
-	-@games.each do |game|
-		.game-container
-			.game-info
-				%h3= game.title
-				.game-functionality
-				= link_to 'Show', game
-				= link_to 'Edit', edit_game_path(game)
-				= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }
+%h1.games-container-index Your Game Collection
+.games-container-index
+  - if @games
+    -@games.each do |game|
+      %p#notice= notice
+      .game-container-index
+        .game-stats
+          .title= link_to game.title, game
+          .sub-game-stats
+        .game-functionality
+          = link_to 'Show', game
+          = link_to 'Edit', edit_game_path(game)
+          = link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Game', new_game_path
 
 
 -if @user.id != @current_user.id
-	= link_to 'Add as friend', user_friends_path(@user), method: :post
+  = link_to 'Add as friend', user_friends_path(@user), method: :post
 

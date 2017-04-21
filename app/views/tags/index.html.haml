@@ -1,7 +1,7 @@
-%h1= "Results for Tag: #{@tag.name}"
+%h1.games-container-index= "Results for Tag: #{@tag.name}"
 - if @games
   -@games.each do |game|
-    = link_to game.title, game
+    = render '/games/index'
 
 .back
-  = link_to 'Back', games_path
+  .games-container-index= link_to 'Back', games_path
