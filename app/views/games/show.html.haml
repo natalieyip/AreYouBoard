@@ -20,8 +20,13 @@
     = link_to 'Back', games_path
 .reviews-container
   - if @reviews
-    @reviews.each do |review|
+    - @reviews.each do |review|
       %h3= review.title
       %p= review.text
-  = form_for
-
+  %h3 Create a New Review
+  = form_for [@game, @new_review] do |f|
+    = f.label 'Title'
+    = f.text_field :title
+    = f.label 'Body'
+    = f.text_field :body
+    = f.submit
