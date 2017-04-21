@@ -12,6 +12,8 @@
     = f.text_field :title
     = f.label 'Publisher'
     = f.text_field :publisher
+    = f.label 'tags'
+    = f.text_field :tags
     = f.label 'Players'
     %select{ name: 'game[players]' }
       %option{:value=> '1', selected: params[:players] == "1"}="1"
