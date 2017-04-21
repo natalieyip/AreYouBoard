@@ -32,26 +32,32 @@
 
 
 .game-functionality {
-  border: 1px solid black;
-  margin-bottom: 10px;
-  padding: 5px;
+  border: 1px solid gray;
+  margin: 3px;
+  padding: 10px;
+  display: flex;
+  background-color: #80e27e;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .game-stats {
   border: 1px solid black;
   padding: 5px;
-  width: 30%;
+  width: 40%;
 }
 
 .game-description {
   border: 1px solid black;
   padding: 5px;
-  width: 60%;
+  width: 40%;
 }
 
 .game-tags {
-  background-color: #087f23;
   border-radius: 3px;
+  margin-left: 10px;
+  padding: 0;
 }
 
 .game-tag {
@@ -61,16 +67,54 @@
 }
 
 .reviews-container {
-  border: 1px solid blue;
   margin: auto;
   width: 50%;
 }
 
 .review-container {
+  border: 1px solid gray;
+  display: block;
+  background-color: #80e27e;
+  border-radius: 5px;
   padding: 5px;
-  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
 }
 
 #title {
   margin-left: 6px;
+}
+
+.link {
+  padding-right: 6px;
+}
+
+.sub-game-stats {
+  margin-left: 10px;
+  padding: 0;
+}
+
+.posted-by {
+  font-size: 8px;
+  margin-left: 9px;
+}
+
+.review-container-inner {
+  margin-left: 5px;
+}
+
+.votes {
+  display: flex;
+  align-items: center;
+}
+
+.vote-buttons {
+  display: flex;
+  width: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.vote-count {
+  margin-right: 10px;
 }
