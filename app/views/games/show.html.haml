@@ -4,7 +4,7 @@
   .game-container
     .votes
       .vote-count= @game.votes.sum(:value)
-      = render partial: "votes/neutral"
+      = render partial: "votes/neutral_game"
     .game-stats
       %h1= @game.title
       .sub-game-stats
@@ -30,6 +30,8 @@
     - @reviews.each do |review|
       .review-container
         .review-container-inner
+          / .vote-count= @review.votes.sum(:value)
+          = render partial: "votes/neutral_review", locals: {review: review }
           %h3= review.title
           %p.posted-by= "Posted by #{User.find(review.user_id).full_name}"
           %p= review.body

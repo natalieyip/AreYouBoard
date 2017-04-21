@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'games#index'
   resources :games do
-  	resources :votes
     resources :reviews
   end
   
@@ -20,5 +19,9 @@ Rails.application.routes.draw do
 
   post '/games/:game_id/upvote', to: 'games#upvote'
   post '/games/:game_id/downvote', to: 'games#downvote'
+
+  post '/games/:game_id/reviews/:review_id/upvote', to: 'reviews#upvote'
+  # post '/games/:game_id/reviews/:review_id/downvote', to: 'reviews#downvote'
+
 
 end
