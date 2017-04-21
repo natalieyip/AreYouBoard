@@ -7,11 +7,15 @@ Rails.application.routes.draw do
   	resources :votes
     resources :reviews
   end
-  resources :users
+  
+  resources :users do
+    resources :friends
+    resources :friendsrequests
+  end
+
   resources :tags
 
-  resources :friends
-  resources :friendsrequests
+  
 
 
   post '/games/:game_id/upvote', to: 'games#upvote'
