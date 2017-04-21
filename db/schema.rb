@@ -65,5 +65,16 @@ ActiveRecord::Schema.define(version: 20170420223333) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.string   "voteable_type"
+    t.integer  "voteable_id"
+    t.integer  "user_id"
+    t.integer  "value"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_votes_on_user_id", using: :btree
+    t.index ["voteable_type", "voteable_id"], name: "index_votes_on_voteable_type_and_voteable_id", using: :btree
+  end
+
   add_foreign_key "friendsrequests", "users"
 end
