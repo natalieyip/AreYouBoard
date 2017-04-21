@@ -74,6 +74,19 @@ class GamesController < ApplicationController
     end
   end
 
+  def upvote
+    @vote = Vote.find_by(voteable_type: :game, voteable_id: params[:game_id], user_id: current_user.id)
+    if @vote
+      @vote.value += 1
+    else
+      @vote = Vote.new(voteable_type: :game, voteable_id: params[:game_id], user_id: current_user.id, value: 1 )
+      redirect_to games_path
+    end
+  end
+
+  def downvote
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game

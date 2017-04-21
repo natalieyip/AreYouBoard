@@ -91,8 +91,6 @@ ActiveRecord::Schema.define(version: 20170420233533) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-<<<<<<< HEAD
-=======
   create_table "votes", force: :cascade do |t|
     t.string   "voteable_type"
     t.integer  "voteable_id"
@@ -104,6 +102,5 @@ ActiveRecord::Schema.define(version: 20170420233533) do
     t.index ["voteable_type", "voteable_id"], name: "index_votes_on_voteable_type_and_voteable_id", using: :btree
   end
 
->>>>>>> 862634c183c6d76020eb29c4c6ba4877c58fea7d
   add_foreign_key "friendsrequests", "users"
 end

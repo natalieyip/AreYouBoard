@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :users
   resources :tags
 
-  get '/games/:game_id/upvote', to: 'votes#neutral'
+  post '/games/:game_id/upvote', to: 'games#upvote'
 end
