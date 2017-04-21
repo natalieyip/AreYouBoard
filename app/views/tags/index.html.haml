@@ -1,0 +1,4 @@
+%h1= "Results for Tag: #{@tag.name}"
+- if @games
+  -@games.each do |game|
+    = link_to game.title, game
