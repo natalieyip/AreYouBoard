@@ -1,7 +1,8 @@
 
 .header-nav
   -if current_user
-    .nav-link= link_to 'Home', games_path
+    .nav-link= link_to 'Game.com', games_path
+    .nav-link= link_to 'Find New Games', games_path
     .nav-link= link_to current_user.first_name, user_path(current_user)
     .nav-link= link_to 'Logout', destroy_user_session_path, :method => :delete
   -else
