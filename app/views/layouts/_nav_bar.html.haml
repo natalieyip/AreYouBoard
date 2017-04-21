@@ -1,12 +1,9 @@
-%ul.header_nav
--if current_user
-  %li
-    %a{:href => "/"} Home
-  %li= link_to(current_user.first_name, "/users/:id")
-  %li= link_to('Logout', destroy_user_session_path, :method => :delete)
--else
-  %li
-    %a{:href => "/users/sign_up"} Register
-  %li
-    %a{:href => "/users/sign_in"} Login
-  
+.header-nav
+  -if current_user
+    .nav-link= link_to 'Home', games_path
+    .nav-link= link_to current_user.first_name, "/users/:id"
+    .nav-link= link_to 'Logout', destroy_user_session_path, :method => :delete
+  -else
+    .nav-link= link_to "Register", new_user_registration_path
+    .nav-link= link_to "Login", new_user_session_path
+
