@@ -4,7 +4,7 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    @games = Game.get_a_users_games(current_user)
     render '/index.html.haml'
   end
 

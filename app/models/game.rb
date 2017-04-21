@@ -11,4 +11,14 @@ class Game < ApplicationRecord
   def game_in_collection?(user)
     GameUser.where(game: self, user: user).length > 0
   end
+
+  def self.get_a_users_games(user)
+    friends = user.friends
+    games = []
+    friends.each do |friend|
+      games + friend.games
+    end
+    games + user.games
+  end
+
 end
