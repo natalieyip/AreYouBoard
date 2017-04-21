@@ -1,6 +1,6 @@
 class Friendship < ApplicationRecord
-	belongs_to :user, foreign_key: :friend_id
-
+	belongs_to :user
+	belongs_to :friend, class_name: "User"
 	 # after creation, create a reciprocal friendship
   after_create do |u|
     # check if friendship already exists
