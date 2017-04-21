@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   post '/games/:game_id/upvote', to: 'games#upvote'
   post '/games/:game_id/downvote', to: 'games#downvote'
 
-  post '/games/:game_id/reviews/:review_id/upvote', to: 'reviews#upvote'
-  # post '/games/:game_id/reviews/:review_id/downvote', to: 'reviews#downvote'
+  post '/reviews/:review_id/upvote', to: 'reviews#upvote'
+  post '/reviews/:review_id/downvote', to: 'reviews#downvote'
 
 
 end
