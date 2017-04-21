@@ -1,5 +1,3 @@
--if @user.id != @current_user.id && !@current_user.friends.pluck(:id).include?(@user.id)
-  = link_to 'Add as friend', user_friends_path(@user), method: :post
 .games-container-index
   - if @user.id == @current_user.id
     %h1 Hi #{@current_user.first_name}!
@@ -23,6 +21,8 @@
 
 .friends-container
   %h1 Friends
+  -if @user.id != @current_user.id && !@current_user.friends.pluck(:id).include?(@user.id)
+    = link_to 'Add as friend', user_friends_path(@user), method: :post
   - if @user.id == @current_user.id
     .your-friends
       -@your_friends.each do |friend|
