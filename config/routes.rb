@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :users
   resources :tags
   resources :friends
-  resources :freindsrequests
+  resources :friendsrequests
 end
