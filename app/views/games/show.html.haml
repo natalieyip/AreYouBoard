@@ -33,9 +33,10 @@
   - if @reviews
     - @reviews.each do |review|
       .review-container
-        .review-container-inner
-          = render partial: "votes/neutral_review", locals: {review: review }
+        .votes-review
           .vote-count= review.votes.sum(:value)
+          = render partial: "votes/neutral_review", locals: {review: review }
+        .review-container-inner
           %h3= review.title
           %p.posted-by= "Posted by #{User.find(review.user_id).full_name}"
           %p= review.body
