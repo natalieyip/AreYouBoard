@@ -11,10 +11,11 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @game = Game.find(params[:id])
     @tags = GameTag.where(game: @game)
     @reviews = Review.where(game: @game)
     @new_review = Review.new()
-    @vote = Vote.new()
+    @vote = Vote.new
   end
 
   # GET /games/new
@@ -24,6 +25,7 @@ class GamesController < ApplicationController
 
   # GET /games/1/edit
   def edit
+
   end
 
   # POST /games
@@ -75,16 +77,31 @@ class GamesController < ApplicationController
   end
 
   def upvote
-    @vote = Vote.find_by(voteable_type: :game, voteable_id: params[:game_id], user_id: current_user.id)
+    @game = Game.find(params[:game_id])
+    @vote = Vote.find_by(voteable: @game, user_id: current_user.id)
     if @vote
-      @vote.value += 1
+      @vote.increase
+      @vote.save
+      redirect_to @game
     else
-      @vote = Vote.new(voteable_type: :game, voteable_id: params[:game_id], user_id: current_user.id, value: 1 )
-      redirect_to games_path
+      @vote = Vote.new(voteable: @game, user_id: current_user.id, value: 1 )
+      @vote.save
+      redirect_to @game
     end
   end
 
   def downvote
+    @game = Game.find(params[:game_id])
+    @vote = Vote.find_by(voteable: @game, user_id: current_user.id)
+    if @vote
+      @vote.decrease
+      @vote.save
+      redirect_to @game
+    else
+      @vote = Vote.new(voteable: @game, user_id: current_user.id, value: 1 )
+      @vote.save
+      redirect_to @game
+    end
   end
 
   private
