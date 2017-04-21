@@ -1,33 +1,38 @@
-= @game.votes.sum(:value)
+
 .games-container
   %p#notice= notice
   .game-container
+    .votes
+      .vote-count= @game.votes.sum(:value)
+      = render partial: "votes/neutral"
     .game-stats
-      %h3= @game.title
-      %p= "Players: #{@game.title}"
-      %p= "Age: #{@game.age}"
-      %p= "Play Time: #{@game.play_time}"
-      %p= "Complexity: #{@game.complexity}"
-      %p= "Publisher: #{@game.publisher}"
+      %h1= @game.title
+      .sub-game-stats
+        %p= "Players: #{@game.title}"
+        %p= "Age: #{@game.age}"
+        %p= "Play Time: #{@game.play_time} min"
+        %p= "Complexity: #{@game.complexity}"
+        %p= "Publisher: #{@game.publisher}"
       .game-tags
-        %p#title Tags:
+        %p Tags:
         - @tags.each do |tag|
           .game-tag
           = link_to tag.tag.name, tag.tag
     .game-description
       %p= "Description: #{@game.description}"
   .game-functionality
-    = link_to 'Edit', edit_game_path(@game)
-    = link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }
-    = link_to 'Back', games_path
+    .link= link_to 'Edit', edit_game_path(@game)
+    .link= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }
+    .link= link_to 'Back', games_path
 .reviews-container
   %h3 Reviews
   - if @reviews
     - @reviews.each do |review|
       .review-container
-        %p= "Posted by #{User.find(review.user_id).full_name}"
-        %h3= review.title
-        %p= review.body
+        .review-container-inner
+          %h3= review.title
+          %p.posted-by= "Posted by #{User.find(review.user_id).full_name}"
+          %p= review.body
   %h3 Create a New Review
   = form_for [@game, @new_review] do |f|
     = f.label 'Title'
@@ -35,5 +40,5 @@
     = f.label 'Body'
     = f.text_field :body
     = f.submit
-= render partial: "votes/neutral"
+
 
