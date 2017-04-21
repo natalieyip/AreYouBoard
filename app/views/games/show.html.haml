@@ -23,6 +23,7 @@
     - @reviews.each do |review|
       %h3= review.title
       %p= review.text
+<<<<<<< HEAD
   %h3 Create a New Review
   = form_for [@game, @new_review] do |f|
     = f.label 'Title'
@@ -30,3 +31,6 @@
     = f.label 'Body'
     = f.text_field :body
     = f.submit
+=======
+= render partial: "votes/neutral"
+>>>>>>> 862634c183c6d76020eb29c4c6ba4877c58fea7d
