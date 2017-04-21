@@ -16,7 +16,6 @@
 
 
 .games-container {
-  border: 1px solid blue;
   margin: auto;
   width: 50%;
 }
@@ -26,6 +25,9 @@
   margin: 3px;
   padding: 10px;
   display: flex;
+  background-color: #80e27e;
+  border-radius: 5px;
+  justify-content: space-between;
 }
 
 
@@ -38,20 +40,37 @@
 .game-stats {
   border: 1px solid black;
   padding: 5px;
+  width: 30%;
 }
 
 .game-description {
   border: 1px solid black;
   padding: 5px;
+  width: 60%;
 }
 
 .game-tags {
-  border: 1px solid black;
-  padding: 5px;
+  background-color: #087f23;
+  border-radius: 3px;
+}
+
+.game-tag {
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 .reviews-container {
   border: 1px solid blue;
   margin: auto;
   width: 50%;
+}
+
+.review-container {
+  padding: 5px;
+  border-bottom: 1px solid gray;
+}
+
+#title {
+  margin-left: 6px;
 }

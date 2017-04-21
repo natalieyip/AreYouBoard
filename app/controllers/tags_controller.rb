@@ -2,6 +2,13 @@ class TagsController < ApplicationController
 
 
   def show
+    @tag = Tag.find(params[:id])
+    @gametags = @tag.game_tags
+    @games = []
+    @gametags.each do |gametag|
+      @games << gametag.game
+    end
+    render "index"
   end
 
 
