@@ -35,6 +35,7 @@ class GamesController < ApplicationController
     tags = tag_params.split(',')
     new_game_params = game_params.except(:tags)
     @game = Game.new(new_game_params)
+    @game.user_id = current_user.id
 
     respond_to do |format|
       if @game.save

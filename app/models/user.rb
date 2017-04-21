@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   has_many :friendships
   has_many :friends, through: :friendships, source: :friend
+  has_many :game_users
+  has_many :games, through: :game_users
 
   def full_name
     self.first_name + ' ' + self.last_name

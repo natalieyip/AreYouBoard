@@ -8,7 +8,7 @@
     .game-stats
       %h1= @game.title
       .sub-game-stats
-        %p= "Players: #{@game.title}"
+        %p= "Players: #{@game.players}"
         %p= "Age: #{@game.age}"
         %p= "Play Time: #{@game.play_time} min"
         %p= "Complexity: #{@game.complexity}"
@@ -20,10 +20,14 @@
           = link_to tag.tag.name, tag.tag
     .game-description
       %p= "Description: #{@game.description}"
-  .game-functionality
-    .link= link_to 'Edit', edit_game_path(@game)
-    .link= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }
-    .link= link_to 'Back', games_path
+  - if @game.user_id == current_user.id
+    .game-functionality
+      .link= link_to 'Edit', edit_game_path(@game)
+      .link= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }
+      .link= link_to 'Back', games_path
+.add-game-container
+  - if !@game.game_in_collection?(current_user)
+    = link_to 'Add Game To Personal Collection', "/games/#{@game.id}/game_users", method: :post
 .reviews-container
   %h3 Reviews
   - if @reviews
@@ -35,12 +39,13 @@
           %h3= review.title
           %p.posted-by= "Posted by #{User.find(review.user_id).full_name}"
           %p= review.body
-  %h3 Create a New Review
-  = form_for [@game, @new_review] do |f|
-    = f.label 'Title'
-    = f.text_field :title
-    = f.label 'Body'
-    = f.text_field :body
-    = f.submit
+  .review-container
+    %h3 Create a New Review
+    = form_for [@game, @new_review] do |f|
+      = f.label 'Title'
+      = f.text_field :title
+      = f.label 'Body'
+      = f.text_field :body
+      = f.submit
 
 

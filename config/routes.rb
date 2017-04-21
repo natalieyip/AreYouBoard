@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   root to: 'games#index'
   resources :games do
     resources :reviews
+    resources :game_users
   end
-  
+
+
+
   resources :users do
     resources :friends
     resources :friendsrequests
@@ -14,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :tags
 
-  
+
 
 
   post '/games/:game_id/upvote', to: 'games#upvote'

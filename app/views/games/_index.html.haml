@@ -1,20 +1,16 @@
 %p#notice= notice
-%h1 Games
-.games-container
-  - @games.each do |game|
-    .game-container
-      .game-info
-        %h3= game.title
-        %p= "Players: #{game.title}"
-        %p= "Age: #{game.age}"
-        %p= "Play Time: #{game.play_time}"
-        %p= "Complexity: #{game.complexity}"
-        %p= "Publisher: #{game.publisher}"
-        %p= "Description: #{game.description}"
-      .game-functionality
-        = link_to 'Show', game
-        = link_to 'Edit', edit_game_path(game)
-        = link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }
+%h1.games-container-index Games
+.games-container-index
+  - if @games
+    - @games.each do |game|
+      %p#notice= notice
+      .game-container-index
+        .game-stats
+          .title= link_to game.title, game
+          .sub-game-stats
+
 %br/
 -if current_user
-  = link_to 'New Game', new_game_path
+  .games-container-index= link_to 'New Game', new_game_path
+
+
