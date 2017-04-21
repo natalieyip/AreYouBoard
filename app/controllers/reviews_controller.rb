@@ -12,19 +12,19 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # def upvote
-  #   @review = Game.find(params[:game_id])
-  #   @vote = Vote.find_by(voteable: @game, user_id: current_user.id)
-  #   if @vote
-  #     @vote.increase
-  #     @vote.save
-  #     redirect_to @game
-  #   else
-  #     @vote = Vote.new(voteable: @game, user_id: current_user.id, value: 1 )
-  #     @vote.save
-  #     redirect_to @game
-  #   end
-  # end
+  def upvote
+    @review = Review.find(params[:id])
+    @vote = Vote.find_by(voteable: @review, user_id: current_user.id)
+    if @vote
+      @vote.increase
+      @vote.save
+      redirect_to game_path(params[:game_id])
+    else
+      @vote = Vote.new(voteable: @review, user_id: current_user.id, value: 1 )
+      @vote.save
+      redirect_to game_path(params[:game_id])
+    end
+  end
 
   # def downvote
   #   @game = Game.find(params[:game_id])
