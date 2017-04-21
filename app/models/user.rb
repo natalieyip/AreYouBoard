@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :received_friendrequests, class_name: "Friendrequest", foreign_key: "friend_id"
 
   has_many :friendships
-  has_many :friends, through: :friendships, source: :user
+  has_many :friends, through: :friendships, source: :friend
 
   def full_name
     self.first_name + ' ' + self.last_name
