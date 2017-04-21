@@ -23,7 +23,8 @@
   - if @reviews
     - @reviews.each do |review|
       %h3= review.title
-      %p= review.text
+      %p= review.body
+      %p= "Posted by #{review.user.username}"
   %h3 Create a New Review
   = form_for [@game, @new_review] do |f|
     = f.label 'Title'
