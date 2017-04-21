@@ -25,6 +25,9 @@
       .link= link_to 'Edit', edit_game_path(@game)
       .link= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }
       .link= link_to 'Back', games_path
+.add-game-container
+  - if !@game.game_in_collection?(current_user)
+    = link_to 'Add Game To Personal Collection', "/games/#{@game.id}/game_users", method: :post
 .reviews-container
   %h3 Reviews
   - if @reviews

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@your_friends = @current_user.friends
 		@their_friends = @user.friends
-		@games = Game.all
+		@games = GameUser.games(@user)
 	end
 
 
