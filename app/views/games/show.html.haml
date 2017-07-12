@@ -13,6 +13,7 @@
         %p= "Play Time: #{@game.play_time} min"
         %p= "Complexity: #{@game.complexity}"
         %p= "Publisher: #{@game.publisher}"
+        =image_tag"#{@game.img_url}"
       .game-tags
         %p Tags:
         - @tags.each do |tag|
