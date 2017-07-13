@@ -15,14 +15,13 @@
  */
 
  * { 
-  font-family: Exo;
+  font-family: Rakkas;
  }
-
 
 
 .game-container-index {
   width: 150px;
-  margin: 35px;
+  margin: 40px;
   display: flex;
   border-radius: 5px;
   justify-content: space-between;
@@ -174,6 +173,7 @@
   margin-right: 10px;
 }
 
+/*
 .header-nav {
   display: flex;
   background: -webkit-radial-gradient(grey, yellow, white);;
@@ -182,12 +182,40 @@
   align-items: center;
   border-radius: 90%;
 }
+*/
 
-
-.nav-link {
-  margin: auto;
-  font-size: 120%;
+.header-nav a{
+  position: absolute; 
+  transition: 0.3s; 
+  padding: 15px; 
+  width: 100px; 
+  text-decoration: none; 
+  font-size: 20px; 
+  color: white; 
+  border-radius: 0 5px 5px 0;
 }
+
+
+.nav-link a:hover  {
+  left: 50;
+}
+
+.home-link {
+    top: 20px;
+    background-color: #4CAF50;
+}
+
+.user-link {
+    top: 80px;
+    background-color: #2196F3; /* Blue */
+}
+
+.log-link {
+    top: 140px;
+    background-color: #f44336; /* Red */
+}
+
+
 
 
 .img-index { 
