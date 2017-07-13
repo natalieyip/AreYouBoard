@@ -215,10 +215,13 @@
     background-color: #f44336; /* Red */
 }
 
-
-
-
 .img-index { 
   width: 200px;
   height: 200px;
+ }
+
+
+ .reg-form {
+  width: 300px;
+  margin: 10em;
  }
