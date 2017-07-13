@@ -1,3 +1,6 @@
+%head
+  %link{:href => "https://fonts.googleapis.com/css?family=Exo", :rel => "stylesheet", :type => "text/css"}/
+
 %p#notice= notice
 %h1.games-container-index Games
 .games-container-index
@@ -6,6 +9,7 @@
       .game-container-index
         .game-stats
           .title= link_to game.title, game
+          = image_tag game.avatar.url, :class => "img-index"
           .sub-game-stats
 
 %br/
