@@ -112,7 +112,7 @@ class GamesController < ApplicationController
     end
 
     def game_params
-      params.fetch(:game).permit(:title, :players, :age, :play_time, :complexity, :publisher, :img_url, :description, :tags)
+      params.fetch(:game).permit(:title, :players, :age, :play_time, :complexity, :publisher, :avatar, :description, :tags)
     end
 
 end

@@ -1,6 +1,7 @@
 
 .games-container
   %p#notice= notice
+  =image_tag "#{@game.avatar.url}"
   .game-container
     .votes
       .vote-count= @game.votes.sum(:value)
