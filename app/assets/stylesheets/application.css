@@ -18,6 +18,9 @@
   font-family: Rakkas;
  }
 
+h1 {
+  font-size: 300%;
+}
 
 .game-container-index {
   width: 150px;
@@ -173,17 +176,6 @@
   margin-right: 10px;
 }
 
-/*
-.header-nav {
-  display: flex;
-  background: -webkit-radial-gradient(grey, yellow, white);;
-  justify-content: flex-start;
-  height: 50px;
-  align-items: center;
-  border-radius: 90%;
-}
-*/
-
 .header-nav a{
   position: absolute; 
   transition: 0.3s; 
@@ -192,36 +184,50 @@
   text-decoration: none; 
   font-size: 20px; 
   color: white; 
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 101px;
 }
-
 
 .nav-link a:hover  {
   left: 50;
 }
 
 .home-link {
-    top: 20px;
-    background-color: #4CAF50;
+  top: 20px;
+  background-color: #4CAF50;
 }
 
 .user-link {
-    top: 80px;
-    background-color: #2196F3; /* Blue */
+  top: 80px;
+  background-color: #2196F3; 
 }
 
 .log-link {
-    top: 140px;
-    background-color: #f44336; /* Red */
+  top: 140px;
+  background-color: #f44336; 
 }
 
 .img-index { 
   width: 200px;
   height: 200px;
+  box-shadow: 7px 7px 2px #D3D3D3;
+  border-radius: 5px 5px 5px 5px;
  }
-
 
  .reg-form {
   width: 300px;
   margin: 10em;
  }
+
+.new-game-btn a{ 
+  background-color: #ffb347 ;
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-size:15px;
+  position: absolute;
+  right: 170px;
+  top: 10px;
+}
+
