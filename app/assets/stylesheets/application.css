@@ -14,21 +14,25 @@
  *= require_self
  */
 
+ * { 
+  font-family: Rakkas;
+ }
+
+h1 {
+  font-size: 300%;
+}
 
 .game-container-index {
   width: 150px;
-  border: 1px solid gray;
-  margin: 3px;
-  padding: 10px;
+  margin: 40px;
   display: flex;
-  background-color: #80e27e;
   border-radius: 5px;
   justify-content: space-between;
 }
 
 .games-container-index {
   margin: auto;
-  width: 50%;
+  width: 75%;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
@@ -125,7 +129,7 @@
 
 .title {
   font-size: 20px;
-  margin-left: 6px;
+  margin: auto;
 }
 
 .link {
@@ -172,14 +176,58 @@
   margin-right: 10px;
 }
 
-.header-nav {
-  display: flex;
-  background-color: #D3D3D3;
-  justify-content: flex-start;
-  height: 50px;
-  align-items: center;
+.header-nav a{
+  position: absolute; 
+  transition: 0.3s; 
+  padding: 15px; 
+  width: 100px; 
+  text-decoration: none; 
+  font-size: 20px; 
+  color: white; 
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 101px;
 }
 
-.nav-link {
-  margin-right: 20px;
+.nav-link a:hover  {
+  left: 50;
 }
+
+.home-link {
+  top: 20px;
+  background-color: #4CAF50;
+}
+
+.user-link {
+  top: 80px;
+  background-color: #2196F3; 
+}
+
+.log-link {
+  top: 140px;
+  background-color: #f44336; 
+}
+
+.img-index { 
+  width: 200px;
+  height: 200px;
+  box-shadow: 7px 7px 2px #D3D3D3;
+  border-radius: 5px 5px 5px 5px;
+ }
+
+ .reg-form {
+  width: 300px;
+  margin: 10em;
+ }
+
+.new-game-btn a{ 
+  background-color: #ffb347 ;
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-size:15px;
+  position: absolute;
+  right: 170px;
+  top: 10px;
+}
+

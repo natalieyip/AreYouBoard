@@ -1,12 +1,12 @@
 
 .header-nav
   -if current_user
-    .nav-link= link_to 'Game.com', games_path
-    .nav-link= link_to 'Find New Games', games_path
-    .nav-link= link_to current_user.first_name, user_path(current_user)
-    .nav-link= link_to 'Logout', destroy_user_session_path, :method => :delete
+    .nav-link= link_to 'Home', games_path, :class => "home-link"
+    .nav-link= link_to current_user.first_name, user_path(current_user), :class => "user-link"
+    .nav-link= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "log-link"
   -else
-    .nav-link= link_to "Register", new_user_registration_path
-    .nav-link= link_to "Login", new_user_session_path
+    .nav-link= link_to 'Home', games_path, :class => "home-link"
+    .nav-link= link_to "Register", new_user_registration_path, :class => "user-link"
+    .nav-link= link_to "Login", new_user_session_path, :class => "log-link"
 
 

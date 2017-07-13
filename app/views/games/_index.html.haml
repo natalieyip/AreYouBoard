@@ -1,15 +1,20 @@
+%head
+  %script{:type => "/app/stylesheets/application.css"} :cdata
+
 %p#notice= notice
-%h1.games-container-index Games
+%h1.games-container-index Are You Board?
 .games-container-index
   - if @games
     - @games.each do |game|
       .game-container-index
-        .game-stats
+        .game-stats   
+          = image_tag game.avatar.url, :class => "img-index"
           .title= link_to game.title, game
           .sub-game-stats
 
 %br/
 -if current_user
-  .games-container-index= link_to 'New Game', new_game_path
+  .games-container-index
+    .new-game-btn= link_to 'Add a New Game', new_game_path
 
 

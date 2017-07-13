@@ -1,7 +1,7 @@
 
 .games-container
   %p#notice= notice
-  =image_tag "#{@game.avatar.url}"
+  =image_tag "#{@game.avatar.url}", :class => "img-index"
   .game-container
     .votes
       .vote-count= @game.votes.sum(:value)
@@ -21,7 +21,7 @@
           = link_to tag.tag.name, tag.tag
     .game-description
       %p= "Description: #{@game.description}"
-  - if @game.user_id == current_user.id
+  - if @game.user_id == current_user
     .game-functionality
       .link= link_to 'Edit', edit_game_path(@game)
       .link= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }
