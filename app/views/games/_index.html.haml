@@ -1,5 +1,5 @@
 %head
-  %link{:href => "https://fonts.googleapis.com/css?family=Exo", :rel => "stylesheet", :type => "text/css"}/
+  %script{:type => "/app/stylesheets/application.css"} :cdata
 
 %p#notice= notice
 %h1.games-container-index Games
@@ -7,9 +7,9 @@
   - if @games
     - @games.each do |game|
       .game-container-index
-        .game-stats
-          .title= link_to game.title, game
+        .game-stats   
           = image_tag game.avatar.url, :class => "img-index"
+          .title= link_to game.title, game
           .sub-game-stats
 
 %br/

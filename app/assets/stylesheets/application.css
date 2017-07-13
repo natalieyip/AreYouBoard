@@ -19,20 +19,18 @@
  }
 
 
+
 .game-container-index {
   width: 150px;
-  border: 1px solid gray;
-  margin: 3px;
-  padding: 10px;
+  margin: 35px;
   display: flex;
-  background-color: #80e27e;
   border-radius: 5px;
   justify-content: space-between;
 }
 
 .games-container-index {
   margin: auto;
-  width: 50%;
+  width: 75%;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
@@ -129,7 +127,7 @@
 
 .title {
   font-size: 20px;
-  margin-left: 6px;
+  margin: auto;
 }
 
 .link {
@@ -178,22 +176,21 @@
 
 .header-nav {
   display: flex;
-  background-color: #D3D3D3;
+  background: -webkit-radial-gradient(grey, yellow, white);;
   justify-content: flex-start;
   height: 50px;
   align-items: center;
+  border-radius: 90%;
 }
 
 
 .nav-link {
   margin: auto;
   font-size: 120%;
-  font-family: Exo;
 }
 
 
-
 .img-index { 
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
  }
