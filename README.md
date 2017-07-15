@@ -1,22 +1,9 @@
-# README
+Are You Board?
+===
 
-This README documents whatever normal steps are necessary to get the
-application up and running.
+## Description
+Are you board? 
 
-Things we will be covering:
+No stress! 
 
-* About this application:
-	This application is a board game social web app. Users can register, log-in and log-out. Users can add games to the database and their personal collections. Users can friend other users and recommend games to their friends. Users can review and comment on games and vote on reviews and games. Users can add tags to games for ease of search.
-
-* Ruby version:
- 	Ruby 2.3.1 is preferred and/or necessary.
-
-* System dependencies
-	The Internet is required.
-
-* Database:
-	Postgres database is required.
-
-* Question of the Day:
-	Can dogs look up?
-	Yes, but only to a certain degree. ‘Big Al’ was almost right.
+Built with Rails, Are You Board? is the perfect place for board game discovery! Users can add and share their favorite board games with the community as well as provide feedback and reviews for each and every one. Users can also upvote games that changed their lives or downvote those that caused them distress and ruined friendships. *cough cough Catan* Discover a new board game today! 
