@@ -2,7 +2,7 @@ Are You Board?
 ===
 
 ## Description
-Are you board? 
+Are you bored? 
 
 No stress! 
 
