@@ -2,19 +2,15 @@
   %script{:type => "/app/stylesheets/application.css"} :cdata
 
 %p#notice= notice
-%h1.games-container-index Are You Board?
+%h1 Are You Board?
 .games-container-index
-  - if @games
-    - @games.each do |game|
-      .game-container-index
-        .game-stats   
-          = image_tag game.avatar.url, :class => "img-index"
-          .title= link_to game.title, game
-          .sub-game-stats
+  -if current_user
+    = link_to 'Add a New Game', new_game_path, class: "new-game-btn"
+  - @games.each do |game|
+    .game-container-index
+      .game-stats   
+        = link_to image_tag(game.avatar.url, :class => "img-index"), game
+        .sub-game-stats
 
-%br/
--if current_user
-  .games-container-index
-    .new-game-btn= link_to 'Add a New Game', new_game_path
 
 
