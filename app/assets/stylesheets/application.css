@@ -18,11 +18,16 @@
   font-family: Rakkas;
  }
 
-h1 {
-  font-size: 300%;
-  padding-left: 200px;
-  padding-top: 90px ;
+.header-intro{ 
+  padding: 20px 200px;
+ }
+
+.header-intro h1 {
+  font-size: 500%;
 }
+
+.header-intro p {
+  font-size: 26px;
 
 .game-container-index {
   width: 150px;
