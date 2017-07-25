@@ -2,7 +2,9 @@
   %script{:type => "/app/stylesheets/application.css"} :cdata
 
 %p#notice= notice
-%h1 Are You Board?
+.header-intro
+  %h1 Are You Board?
+  %p Are You Board? is the perfect place for board game discovery! Users can add and share their favorite board games with the community as well as provide feedback and reviews for each and every one. Users can also upvote games that changed their lives or downvote those that caused them distress and ruined friendships. cough cough Catan Discover a new board game today!
 .games-container-index
   -if current_user
     = link_to 'Add a New Game', new_game_path, class: "new-game-btn"
