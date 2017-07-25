@@ -21,7 +21,7 @@
 h1 {
   font-size: 300%;
   padding-left: 200px;
-  padding-top: 20px ;
+  padding-top: 90px ;
 }
 
 .game-container-index {
@@ -180,19 +180,6 @@ h1 {
 /****/ 
 
 /**NAV BAR **/ 
-
-/*.header-nav a{*/
-/*  position: absolute; 
-  transition: 0.3s; 
-  padding: 15px; 
-  width: 100px; 
-  text-decoration: none; 
-  font-size: 20px; 
-  color: white; 
-  border-radius: 5px 5px 5px 5px;
-  margin-top: 101px;*/
-/*}*/
-
 
 #menuToggle
 {
