@@ -1,0 +1,21 @@
+%nav{:role => "navigation"}
+  #menuToggle
+    %input{:type => "checkbox"}/
+    %span
+    %span
+    %span
+    %ul#menu
+      - if current_user
+        %li
+          = link_to 'Home', games_path, :class => "home-link"
+        %li
+          = link_to current_user.first_name, user_path(current_user), :class => "user-link"
+        %li
+          = link_to 'Logout', %destroy_user_session_path, :method => :delete, :class => "log-link"
+      - else
+        %li
+          = link_to 'Home', games_path, :class => "home-link"
+        %li
+          = link_to "Register", new_user_registration_path, :class => "user-link"
+        %li
+          = link_to "Login", new_user_session_path, :class => "log-link"
