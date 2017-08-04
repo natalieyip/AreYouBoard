@@ -4,6 +4,7 @@ Game.destroy_all
 Tag.destroy_all
 GameTag.destroy_all
 User.destroy_all
+Review.destroy_all
 
 tags_arr = ["Family", "Strategy", "Party", "Chance", "Puzzle", "Team"]
 
@@ -26,7 +27,7 @@ json.each do |game|
   @game[:publisher] = Faker::Company.name
   @game[:img_url] = game['image'] if game['image'] != nil
   @game[:avatar_file_name] = game['thumbnail'] if game['thumbnail'] != nil
-  @game[:description] = Faker::Lorem.paragraph(2)
+  @game[:description] = Faker::Lorem.paragraph
   @game.save!
 	GameTag.create!(
 		tag_id: rand(1..6),
@@ -37,5 +38,15 @@ end
 5.times do
   User.create!( 
 	  :email      => Faker::Internet.safe_email,
-	  :password   => 'password' )
+	  :password   => 'password' 
+	  )
+end
+
+20.times do 
+	Review.create!(
+		user_id: 1, 
+		game_id: rand(1..400),
+		title: Faker::Hipster.sentence(8),
+		body: Faker::Lorem.paragraph(3)
+	)
 end
