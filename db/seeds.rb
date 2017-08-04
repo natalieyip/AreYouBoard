@@ -10,11 +10,6 @@ tags_arr.map! do |tag|
 	Tag.create!(name: tag)
 end  
 
- GameTag.create(
- 	tag: rand(1..6)
- 	game: rand(1..485)
- )
-
 age_arr = [2, 4, 8, 10, 16]
 complexity_arr = [1,2,3,4,5,6,7,8,9,10]
 
@@ -32,4 +27,8 @@ json.each do |game|
   @game[:avatar_file_name] = game['thumbnail'] if game['thumbnail'] != nil
   @game[:description] = Faker::Lorem.paragraph
   @game.save!
+ GameTag.create!(
+ 	tag_id: rand(1..6),
+ 	game_id: @game.id
+ )
 end
