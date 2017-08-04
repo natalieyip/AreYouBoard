@@ -3,6 +3,7 @@ require 'json'
 Game.destroy_all
 Tag.destroy_all
 GameTag.destroy_all
+User.destroy_all
 
 tags_arr = ["Family", "Strategy", "Party", "Chance", "Puzzle", "Team"]
 
@@ -25,10 +26,16 @@ json.each do |game|
   @game[:publisher] = Faker::Company.name
   @game[:img_url] = game['image'] if game['image'] != nil
   @game[:avatar_file_name] = game['thumbnail'] if game['thumbnail'] != nil
-  @game[:description] = Faker::Lorem.paragraph
+  @game[:description] = Faker::Lorem.paragraph(2)
   @game.save!
- GameTag.create!(
- 	tag_id: rand(1..6),
- 	game_id: @game.id
- )
+	GameTag.create!(
+		tag_id: rand(1..6),
+		game_id: @game.id
+	)
+end
+
+5.times do
+  User.create!( 
+	  :email      => Faker::Internet.safe_email,
+	  :password   => 'password' )
 end
