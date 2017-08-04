@@ -10,7 +10,7 @@
     = link_to 'Add a New Game', new_game_path, class: "new-game-btn"
   - @games.each do |game|
     .game-container-index
-      = link_to image_tag(game.avatar.url, :class => "img-index"), game
+      = link_to image_tag(game.img_url, :class => "img-index"), game
 
 
 
