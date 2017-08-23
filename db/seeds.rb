@@ -1,7 +1,52 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
+
+Game.destroy_all
+Tag.destroy_all
+GameTag.destroy_all
+User.destroy_all
+Review.destroy_all
+
+tags_arr = ["Family", "Strategy", "Party", "Chance", "Puzzle", "Team"]
+
+tags_arr.map! do |tag|
+	Tag.create!(name: tag)
+end  
+
+age_arr = [2, 4, 8, 10, 16]
+complexity_arr = [1,2,3,4,5,6,7,8,9,10]
+
+json = JSON.parse(File.read('boardgamegeekseed.json'))
+
+json.each do |game|
+  @game = Game.new
+  @game[:title] = game['name'] if game['name'] != nil
+  @game[:players] = game['minPlayers'] if game['minPlayers'] != nil
+  @game[:age] = age_arr.sample
+  @game[:play_time] = game['playingTime'] if game['playingTime'] != nil
+  @game[:complexity] = complexity_arr.sample
+  @game[:publisher] = Faker::Company.name
+  @game[:img_url] = game['image'] if game['image'] != nil
+  @game[:avatar_file_name] = game['thumbnail'] if game['thumbnail'] != nil
+  @game[:description] = Faker::Lorem.paragraph
+  @game.save!
+	GameTag.create!(
+		tag_id: rand(1..6),
+		game_id: @game.id
+	)
+end
+
+5.times do
+  User.create!( 
+	  :email      => Faker::Internet.safe_email,
+	  :password   => 'password' 
+	  )
+end
+
+20.times do 
+	Review.create!(
+		user_id: 1, 
+		game_id: rand(1..400),
+		title: Faker::Hipster.sentence(8),
+		body: Faker::Lorem.paragraph(3)
+	)
+end

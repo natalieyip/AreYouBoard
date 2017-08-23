@@ -11,7 +11,7 @@
         %li
           = link_to current_user.first_name, user_path(current_user), :class => "user-link"
         %li
-          = link_to 'Logout', %destroy_user_session_path, :method => :delete, :class => "log-link"
+          = link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "log-link"
       - else
         %li
           = link_to 'Home', games_path, :class => "home-link"
